@@ -7,3 +7,7 @@ vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent
 
 -- Keymap to autoindent, is more convenient
 vim.api.nvim_set_keymap("n", "==", "gg=G", { noremap = true })
+
+-- half page up/down remapping to always make cursor centered
+vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", { noremap = true })
