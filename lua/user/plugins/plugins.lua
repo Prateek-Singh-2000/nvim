@@ -126,6 +126,9 @@ require("lazy").setup({
 			indent = { char = "┊" },
 		},
 	},
+	{
+		"ThePrimeagen/vim-be-good",
+	},
 	require("user.plugins.formatting"),
 	require("user.plugins.linters.sonarlint"),
 	require("user.plugins.telescope"),
