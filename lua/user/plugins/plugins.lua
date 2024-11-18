@@ -35,7 +35,7 @@ require("lazy").setup({
 		-- priority = 1000,
 		-- opts = {},
 		config = function()
-			vim.cmd.colorscheme("twilight256")
+			vim.cmd.colorscheme("afterglow")
 		end
 	},
 	{
@@ -126,6 +126,11 @@ require("lazy").setup({
 			indent = { char = "┊" },
 		},
 	},
+	{
+		-- Adds a beautiful line above command line
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = true	},
 	{
 		"ThePrimeagen/vim-be-good",
 	},
