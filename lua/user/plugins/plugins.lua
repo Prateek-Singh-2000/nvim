@@ -25,18 +25,18 @@ require("lazy").setup({
 		lazy = false,
 		priority = 1000,
 		opts = {},
-		-- config = function()
-		-- 	vim.cmd.colorscheme("tokyonight")
-		-- end
+		config = function()
+			vim.cmd.colorscheme("tokyonight-night")
+		end
 	},
 	{
 		"rafi/awesome-vim-colorschemes",
 		-- lazy = false,
 		-- priority = 1000,
 		-- opts = {},
-		config = function()
-			vim.cmd.colorscheme("afterglow")
-		end
+		-- config = function()
+		-- 	vim.cmd.colorscheme("twilight256")
+		-- end
 	},
 	{
 		-- Automatically pairs brackets, inverted commas, etc.
