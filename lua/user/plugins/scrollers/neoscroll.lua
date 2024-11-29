@@ -1,27 +1,28 @@
 return {
-  'karb94/neoscroll.nvim',
-  config = function()
-    require('neoscroll').setup({
-      -- Disable in these modes
-      stop_eof = true,       -- Stop at the end of the file
-      use_local_scrolloff = true, -- Use local scrolloff value
-      respect_scrolloff = true, -- Stop scrolling when cursor reaches scrolloff margin
-      easing_function = "quadratic", -- Smooth quadratic easing
-      pre_hook = nil,        -- Function to run before scrolling
-      post_hook = nil,       -- Function to run after scrolling
-      performance_mode = false, -- Disable for better performance on older machines
-    })
-
-    -- Optional: Set up mappings for smoother scrolling
-    -- local t = {}
-    -- -- Syntax: t[keys] = {function, {mode, optional args}}
-    -- t['<C-u>'] = {'scroll', {'-vim.wo.scroll', 'true', '50'}}
-    -- t['<C-d>'] = {'scroll', { 'vim.wo.scroll', 'true', '50'}}
-    -- t['<C-b>'] = {'scroll', {'-vim.api.nvim_win_get_height(0)', 'true', '50'}}
-    -- t['<C-f>'] = {'scroll', { 'vim.api.nvim_win_get_height(0)', 'true', '50'}}
-    -- t['<C-y>'] = {'scroll', {'-0.10', 'false', '50'}}
-    -- t['<C-e>'] = {'scroll', { '0.10', 'false', '50'}}
-    -- 
-    -- require('neoscroll.config').set_mappings(t)
-  end
+	'karb94/neoscroll.nvim',
+	config = function()
+		require('neoscroll').setup({
+			mappings = {                 -- Keys to be mapped to their corresponding default scrolling animation
+				'<C-u>', '<C-d>',
+				'<C-b>', '<C-f>',
+				'<C-y>', '<C-e>',
+				'zt', 'zz', 'zb',
+			},
+			post_hook = function()
+				vim.cmd('normal! zz')
+			end,		
+			hide_cursor = true,          -- Hide cursor while scrolling
+			stop_eof = true,             -- Stop at <EOF> when scrolling downwards
+			respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
+			cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
+			duration_multiplier = 1.0,   -- Global duration multiplier
+			easing = 'linear',           -- Default easing function
+			pre_hook = nil,              -- Function to run before the scrolling animation starts
+			post_hook = nil,             -- Function to run after the scrolling animation ends
+			performance_mode = false,    -- Disable "Performance Mode" on all buffers.
+			ignored_events = {           -- Events ignored while scrolling
+				'WinScrolled', 'CursorMoved'
+			},
+		})
+	end
 }
