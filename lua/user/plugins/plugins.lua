@@ -35,7 +35,7 @@ require("lazy").setup({
 				-- priority = 1000,
 				-- opts = {},
 				config = function()
-					vim.cmd.colorscheme("afterglow")
+					vim.cmd.colorscheme("twilight256")
 				end
 			},
 			{
@@ -152,6 +152,9 @@ require("lazy").setup({
 						}
 					})
 				end
+			},
+			{
+				"kshenoy/vim-signature",
 			},
 			{
 				"ThePrimeagen/vim-be-good",
