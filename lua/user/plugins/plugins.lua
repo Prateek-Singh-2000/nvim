@@ -171,4 +171,5 @@ require("lazy").setup({
 	require("user.plugins.treesitter"),
 	require("user.plugins.nvim-cmp"),
 	-- require("user.plugins.scrollers.neoscroll"),
+	require("user.plugins.surrounds.tpope-vim-surround")
 })
