@@ -6,23 +6,23 @@ return {
 			sources = {
 				null_ls.builtins.formatting.black,
 				null_ls.builtins.formatting.prettier.with({
-					filetypes = { 
-						"javascript", 
-						"javascriptreact", 
-						"typescript", 
-						"typescriptreact", 
-						"vue", 
-						"css", 
-						"scss", 
-						"html", 
-						"json", 
-						"jsonc", 
-						"yaml", 
-						"markdown", 
-						"graphql", 
-						"handlebars" 
+					filetypes = {
+						"javascript",
+						"javascriptreact",
+						"typescript",
+						"typescriptreact",
+						"vue",
+						"css",
+						"scss",
+						"html",
+						"json",
+						"jsonc",
+						"yaml",
+						"markdown",
+						"graphql",
+						"handlebars"
 					}
-				})
+				}),
 			},
 		})
 
