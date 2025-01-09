@@ -165,14 +165,12 @@ require("lazy").setup({
 	{
 		"ThePrimeagen/vim-be-good",
 	},
-	{
-		"github/copilot.vim"
-	},
 	require("user.plugins.formatting"),
 	require("user.plugins.linters.sonarlint"),
 	require("user.plugins.telescope"),
 	require("user.plugins.treesitter"),
 	require("user.plugins.nvim-cmp"),
+	require("user.plugins.ai_completions.copilot"),
 	-- require("user.plugins.scrollers.neoscroll"),
 	require("user.plugins.surrounds.tpope-vim-surround"),
 	require("user.plugins.vim-tmux-navigator.vim-tmux-navigator")
