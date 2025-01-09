@@ -165,6 +165,9 @@ require("lazy").setup({
 	{
 		"ThePrimeagen/vim-be-good",
 	},
+	{
+		"github/copilot.vim"
+	},
 	require("user.plugins.formatting"),
 	require("user.plugins.linters.sonarlint"),
 	require("user.plugins.telescope"),
