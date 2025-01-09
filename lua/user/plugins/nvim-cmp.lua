@@ -14,6 +14,7 @@ return {
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 		"rafamadriz/friendly-snippets", -- useful snippets
 		"onsails/lspkind.nvim", -- vs-code like pictograms
+		"zbirenbaum/copilot-cmp", -- Add copilot-cmp dependency
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -24,6 +25,15 @@ return {
 
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
+
+		-- **Copilot setup**
+    local copilot_cmp = require("copilot_cmp")
+    copilot_cmp.setup({
+      -- You can put your other options here
+      formatters = {
+        insert_text = require('copilot_cmp.format').remove_existing,
+      }
+    })
 
 		cmp.setup({
 			completion = {
@@ -42,6 +52,19 @@ return {
 				["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
 				["<C-e>"] = cmp.mapping.abort(), -- close completion window
 				["<CR>"] = cmp.mapping.confirm({ select = false }),
+				-- Copilot mappings
+        ["<C-l>"] = cmp.mapping(function()
+          if not copilot_cmp.is_visible() then
+            return
+          end
+          copilot_cmp.accept()
+        end, {"i", "c"}),
+        ["<C-]>"] = cmp.mapping(function()
+          if not copilot_cmp.is_visible() then
+            return
+          end
+          copilot_cmp.dismiss()
+        end, {"i", "c"}),
 			}),
 			-- sources for autocompletion
 			sources = cmp.config.sources({
@@ -49,6 +72,7 @@ return {
 				{ name = "luasnip" }, -- snippets
 				{ name = "buffer" }, -- text within current buffer
 				{ name = "path" }, -- file system paths
+				{ name = "copilot", group_index = 2 }, -- Add copilot as a source
 			}),
 
 			-- configure lspkind for vs-code like pictograms in completion menu
