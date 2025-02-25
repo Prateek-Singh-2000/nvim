@@ -10,6 +10,7 @@ return {
 		lspconfig.cssls.setup {}
 		lspconfig.html.setup {}
 		lspconfig.ts_ls.setup {}
+		lspconfig.eslint.setup {}
 
 		-- Setup Sonarlint
 		local configs = require('lspconfig.configs')
