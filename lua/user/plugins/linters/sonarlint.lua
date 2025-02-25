@@ -9,6 +9,7 @@ return {
 		local lspconfig = require('lspconfig')
 		lspconfig.cssls.setup {}
 		lspconfig.html.setup {}
+		lspconfig.ts_ls.setup {}
 
 		-- Setup Sonarlint
 		local configs = require('lspconfig.configs')
