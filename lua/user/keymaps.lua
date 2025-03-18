@@ -11,3 +11,7 @@ vim.api.nvim_set_keymap("n", "==", "gg=G", { noremap = true })
 -- half page up/down remapping to always make cursor centered
 vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", { noremap = true })
+
+vim.keymap.set('n', '<leader>dd', '"_dd', { desc = 'Delete line without yank (blackhole)', noremap = true, silent = true })
+vim.keymap.set('v', '<leader>d', '"_d',
+	{ desc = 'Delete visual lines without yank (blackhole)', noremap = true, silent = true })
