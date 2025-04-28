@@ -16,15 +16,15 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{
 		"rebelot/kanagawa.nvim",
-		-- config = function()
-		-- 	vim.cmd.colorscheme("kanagawa-dragon")
-		-- end
+		config = function()
+			vim.cmd.colorscheme("kanagawa-dragon")
+		end
 	},
 	{
 		"dasupradyumna/midnight.nvim",
-		config = function()
-			vim.cmd.colorscheme("midnight")
-		end
+		-- config = function()
+		-- 	vim.cmd.colorscheme("midnight")
+		-- end
 	},
 	{
 		"folke/tokyonight.nvim",
@@ -173,5 +173,6 @@ require("lazy").setup({
 	require("user.plugins.ai_completions.copilot"),
 	-- require("user.plugins.scrollers.neoscroll"),
 	require("user.plugins.surrounds.tpope-vim-surround"),
-	require("user.plugins.vim-tmux-navigator.vim-tmux-navigator")
+	require("user.plugins.vim-tmux-navigator.vim-tmux-navigator"),
+	-- require("user.plugins.snacks.snacks")
 })

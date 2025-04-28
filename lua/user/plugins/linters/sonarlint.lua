@@ -13,6 +13,7 @@ return {
 		lspconfig.html.setup {}
 		lspconfig.ts_ls.setup {}
 		lspconfig.eslint.setup {}
+		lspconfig.rust_analyzer.setup {}
 
 		-- Setup Sonarlint
 		local configs = require('lspconfig.configs')
@@ -90,7 +91,7 @@ return {
 		vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover documentation' })
 
 		-- Additional important keymaps
-		vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Show line diagnostics' })
+		vim.keymap.set('n', '<leader>i', vim.diagnostic.open_float, { desc = 'Show line diagnostics' })
 		vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
 		vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
 		vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code actions' })
