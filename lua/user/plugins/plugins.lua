@@ -16,21 +16,21 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{
 		"rebelot/kanagawa.nvim",
-		config = function()
-			vim.cmd.colorscheme("kanagawa-dragon")
-		end
-	},
-	{
-		"dasupradyumna/midnight.nvim",
 		-- config = function()
-		-- 	vim.cmd.colorscheme("midnight")
+		-- 	vim.cmd.colorscheme("kanagawa-dragon")
 		-- end
 	},
 	{
+		"dasupradyumna/midnight.nvim",
+		config = function()
+			vim.cmd.colorscheme("midnight")
+		end
+	},
+	{
 		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
+		-- lazy = false,
+		-- priority = 1000,
+		-- opts = {},
 		-- config = function()
 		-- 	vim.cmd.colorscheme("tokyonight-night")
 		-- end
