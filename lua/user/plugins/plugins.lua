@@ -21,10 +21,18 @@ require("lazy").setup({
 		-- end
 	},
 	{
-		"dasupradyumna/midnight.nvim",
+		"samueljoli/cyberpunk.nvim",
 		config = function()
-			vim.cmd.colorscheme("midnight")
+			require('cyberpunk').setup {
+				theme = 'dark'
+			}
 		end
+	},
+	{
+		"dasupradyumna/midnight.nvim",
+		-- config = function()
+		-- 	vim.cmd.colorscheme("midnight")
+		-- end
 	},
 	{
 		"folke/tokyonight.nvim",
@@ -144,8 +152,8 @@ require("lazy").setup({
 			require('nvim-ts-autotag').setup({
 				opts = {
 					-- Defaults
-					enable_close = true, -- Auto close tags
-					enable_rename = true, -- Auto rename pairs of tags
+					enable_close = true,     -- Auto close tags
+					enable_rename = true,    -- Auto rename pairs of tags
 					enable_close_on_slash = false -- Auto close on trailing </
 				},
 				-- Also override individual filetype configs, these take priority.
