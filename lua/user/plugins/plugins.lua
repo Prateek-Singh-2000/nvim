@@ -22,17 +22,17 @@ require("lazy").setup({
 	},
 	{
 		"samueljoli/cyberpunk.nvim",
-		config = function()
-			require('cyberpunk').setup {
-				theme = 'dark'
-			}
-		end
+		-- config = function()
+		-- 	require('cyberpunk').setup {
+		-- 		theme = 'dark'
+		-- 	}
+		-- end
 	},
 	{
 		"dasupradyumna/midnight.nvim",
-		-- config = function()
-		-- 	vim.cmd.colorscheme("midnight")
-		-- end
+		config = function()
+			vim.cmd.colorscheme("midnight")
+		end
 	},
 	{
 		"folke/tokyonight.nvim",
