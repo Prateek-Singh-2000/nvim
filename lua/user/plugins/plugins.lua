@@ -30,9 +30,9 @@ require("lazy").setup({
 	},
 	{
 		"dasupradyumna/midnight.nvim",
-		config = function()
-			vim.cmd.colorscheme("midnight")
-		end
+		-- config = function()
+		-- 	vim.cmd.colorscheme("midnight")
+		-- end
 	},
 	{
 		"folke/tokyonight.nvim",
@@ -178,6 +178,8 @@ require("lazy").setup({
 	require("user.plugins.telescope"),
 	require("user.plugins.treesitter"),
 	require("user.plugins.nvim-cmp"),
+	require("user.plugins.themes.nord"),
+	require("user.plugins.ai_completions.copilot"),
 	require("user.plugins.ai_completions.copilot"),
 	-- require("user.plugins.scrollers.neoscroll"),
 	require("user.plugins.surrounds.tpope-vim-surround"),
