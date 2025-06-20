@@ -190,10 +190,11 @@ require("lazy").setup({
 	require("user.plugins.treesitter"),
 	require("user.plugins.nvim-cmp"),
 	-- require("user.plugins.themes.nord"),
-	-- require("user.plugins.ai_completions.copilot"),
+	require("user.plugins.ai_completions.copilot"),
 	require("user.plugins.ai_completions.gemini"),
 	-- require("user.plugins.scrollers.neoscroll"),
 	require("user.plugins.surrounds.tpope-vim-surround"),
+	require("user.plugins.file_manager.yazi"),
 	require("user.plugins.harpoon.harpoon"),
 	require("user.plugins.vim-tmux-navigator.vim-tmux-navigator"),
 	-- require("user.plugins.snacks.snacks")
