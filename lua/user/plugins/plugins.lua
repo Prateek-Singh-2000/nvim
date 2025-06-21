@@ -152,12 +152,6 @@ require("lazy").setup({
 		},
 	},
 	{
-		-- Adds a beautiful line above command line
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = true
-	},
-	{
 		"windwp/nvim-ts-autotag",
 		config = function()
 			require('nvim-ts-autotag').setup({
@@ -192,6 +186,7 @@ require("lazy").setup({
 	-- require("user.plugins.themes.nord"),
 	require("user.plugins.ai_completions.copilot"),
 	require("user.plugins.ai_completions.gemini"),
+	require("user.plugins.tabline.lua-line"),
 	-- require("user.plugins.scrollers.neoscroll"),
 	require("user.plugins.surrounds.tpope-vim-surround"),
 	require("user.plugins.file_manager.yazi"),
