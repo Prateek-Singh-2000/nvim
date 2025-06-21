@@ -191,6 +191,7 @@ require("lazy").setup({
 	require("user.plugins.surrounds.tpope-vim-surround"),
 	require("user.plugins.file_manager.yazi"),
 	require("user.plugins.harpoon.harpoon"),
+	require("user.plugins.git.git-signs"),
 	require("user.plugins.vim-tmux-navigator.vim-tmux-navigator"),
 	-- require("user.plugins.snacks.snacks")
 })
