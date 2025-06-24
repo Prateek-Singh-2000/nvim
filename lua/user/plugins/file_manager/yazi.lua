@@ -3,12 +3,9 @@ return {
   "mikavilpas/yazi.nvim",
   event = "VeryLazy",
   dependencies = {
-    -- check the installation instructions at
-    -- https://github.com/folke/snacks.nvim
     "folke/snacks.nvim"
   },
   keys = {
-    -- 👇 in this section, choose your own keymappings!
     {
       "<leader>yc",
       mode = { "n", "v" },
@@ -16,7 +13,6 @@ return {
       desc = "Open yazi at the current file",
     },
     {
-      -- Open in the current working directory
       "<leader>yy",
       "<cmd>Yazi cwd<cr>",
       desc = "Open the file manager in nvim's working directory",
