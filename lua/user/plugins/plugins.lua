@@ -193,5 +193,6 @@ require("lazy").setup({
 	require("user.plugins.harpoon.harpoon"),
 	require("user.plugins.git.git-signs"),
 	require("user.plugins.vim-tmux-navigator.vim-tmux-navigator"),
+	require("user.plugins.themes.hexokinase"),
 	-- require("user.plugins.snacks.snacks")
 })
