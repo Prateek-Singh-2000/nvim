@@ -115,11 +115,26 @@ require("lazy").setup({
 		"williamboman/mason-lspconfig.nvim",
 		dependencies = { "williamboman/mason.nvim" },
 		config = function()
-			require("mason-lspconfig").setup({})
-			require("mason-lspconfig").setup_handlers {
-				function(server_name)
-					require("lspconfig")[server_name].setup {}
-				end,
+			vim.lsp.config('lua_ls', {
+				settings = {
+					Lua = {
+						runtime = {
+							version = 'LuaJIT',
+						},
+						diagnostics = {
+							globals = {
+								'vim',
+								'require',
+							},
+						},
+					},
+				},
+			})
+
+			require("mason").setup()
+			-- Note: `nvim-lspconfig` needs to be in 'runtimepath' by the time you set up mason-lspconfig.nvim
+			require("mason-lspconfig").setup {
+				ensure_installed = { "lua_ls" }
 			}
 		end,
 	},
@@ -194,5 +209,7 @@ require("lazy").setup({
 	require("user.plugins.git.git-signs"),
 	require("user.plugins.vim-tmux-navigator.vim-tmux-navigator"),
 	require("user.plugins.themes.hexokinase"),
+	require("user.plugins.themes.better-cmd-line"),
+	require("user.plugins.themes.dashboard"),
 	-- require("user.plugins.snacks.snacks")
 })
