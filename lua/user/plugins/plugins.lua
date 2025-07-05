@@ -200,7 +200,7 @@ require("lazy").setup({
 	require("user.plugins.nvim-cmp"),
 	-- require("user.plugins.themes.nord"),
 	require("user.plugins.ai_completions.copilot"),
-	require("user.plugins.ai_completions.gemini"),
+	-- require("user.plugins.ai_completions.gemini"),
 	require("user.plugins.tabline.lua-line"),
 	-- require("user.plugins.scrollers.neoscroll"),
 	require("user.plugins.surrounds.tpope-vim-surround"),
