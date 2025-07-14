@@ -11,10 +11,23 @@ local matrix_art = {
 	"                                                                 "
 }
 
+local named_art= {
+	"                                                                 ",
+	"     █████╗ ██╗      █████╗  ██████╗██████╗ ██╗████████╗██╗   ██╗",
+	"    ██╔══██╗██║     ██╔══██╗██╔════╝██╔══██╗██║╚══██╔══╝╚██╗ ██╔╝",
+	"    ███████║██║     ███████║██║     ██████╔╝██║   ██║    ╚████╔╝ ",
+	"    ██╔══██║██║     ██╔══██║██║     ██╔══██╗██║   ██║     ╚██╔╝  ",
+	"    ██║  ██║███████╗██║  ██║╚██████╗██║  ██║██║   ██║      ██║   ",
+	"    ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝   ╚═╝      ╚═╝   ",
+	"                                                                 ",
+	"                           [AI CODER]                           ",
+	"                                                                 "
+}
+
 local dashboard_config = {
 	theme = 'doom',
 	config = {
-		header = matrix_art,     -- Change this to any art above
+		header = named_art,     -- Change this to any art above
 		center = {
 			{ action = 'Telescope find_files', desc = ' Find file',    icon = ' ', key = 'f' },
 			{ action = 'ene | startinsert',    desc = ' New file',     icon = ' ', key = 'n' },

@@ -15,55 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
-		"rebelot/kanagawa.nvim",
-		-- config = function()
-		-- 	vim.cmd.colorscheme("kanagawa-dragon")
-		-- end
-	},
-	{
-		"samueljoli/cyberpunk.nvim",
-		-- config = function()
-		-- 	require('cyberpunk').setup {
-		-- 		theme = 'dark'
-		-- 	}
-		-- end
-	},
-	{
-		"dasupradyumna/midnight.nvim",
-		-- config = function()
-		-- 	vim.cmd.colorscheme("midnight")
-		-- end
-	},
-	{
-		"folke/tokyonight.nvim",
-		-- lazy = false,
-		-- priority = 1000,
-		-- opts = {},
-		-- config = function()
-		-- 	vim.cmd.colorscheme("tokyonight-night")
-		-- end
-	},
-	{
-		"rafi/awesome-vim-colorschemes",
-		-- lazy = false,
-		-- priority = 1000,
-		-- opts = {},
-		-- config = function()
-		-- 	vim.cmd.colorscheme("twilight256")
-		-- end
-	},
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		config = function()
-			require("catppuccin").setup({
-				flavour = "mocha",
-			})
-			vim.cmd.colorscheme "catppuccin"
-		end
-	},
-	{
 		-- Automatically pairs brackets, inverted commas, etc.
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
@@ -194,13 +145,24 @@ require("lazy").setup({
 		"ThePrimeagen/vim-be-good",
 	},
 	require("user.plugins.formatting"),
-	require("user.plugins.linters.sonarlint"),
+	require("user.plugins.linters.lspconfig"),
 	require("user.plugins.telescope"),
 	require("user.plugins.treesitter"),
 	require("user.plugins.nvim-cmp"),
+
+
+	-- Themes editor
 	-- require("user.plugins.themes.nord"),
+	require("user.plugins.themes.catppucin"),
+	-- require("user.plugins.themes.tokyo-night"),
+	-- require("user.plugins.themes.midnight"),
+	-- require("user.plugins.themes.cyberpunk"),
+	-- require("user.plugins.themes.kanagawa"),
+	-- require("user.plugins.themes.awesome-colorscheme"),
+
+
 	require("user.plugins.ai_completions.copilot"),
-	-- require("user.plugins.ai_completions.gemini"),
+	require("user.plugins.ai_completions.gemini"),
 	require("user.plugins.tabline.lua-line"),
 	-- require("user.plugins.scrollers.neoscroll"),
 	require("user.plugins.surrounds.tpope-vim-surround"),
