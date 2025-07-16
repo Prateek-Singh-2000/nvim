@@ -11,8 +11,8 @@ return {
 		-- lspconfig.pyright.setup {}
 		lspconfig.lua_ls.setup {}
 		lspconfig.html.setup {}
-		lspconfig.ts_ls.setup {}
-		lspconfig.eslint.setup {}
+		-- lspconfig.ts_ls.setup {}
+		-- lspconfig.eslint.setup {}
 		lspconfig.rust_analyzer.setup {}
 
 		-- Setup Sonarlint
