@@ -9,7 +9,7 @@ return {
 		local lspconfig = require('lspconfig')
 		lspconfig.cssls.setup {}
 		-- lspconfig.pyright.setup {}
-		lspconfig.lua_ls.setup {}
+		-- lspconfig.lua_ls.setup {}
 		lspconfig.html.setup {}
 		-- lspconfig.ts_ls.setup {}
 		-- lspconfig.eslint.setup {}

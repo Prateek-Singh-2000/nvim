@@ -16,12 +16,3 @@ vim.keymap.set('n', '<leader>dd', '"_dd', { desc = 'Delete line without yank (bl
 vim.keymap.set('v', '<leader>d', '"_d',
 	{ desc = 'Delete visual lines without yank (blackhole)', noremap = true, silent = true })
 
--- Keymap to delete all buffers except the current one
-vim.keymap.set("n", "<leader>bd", function()
-  local current = vim.fn.expand("%")
-  for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
-    if vim.api.nvim_buf_is_loaded(bufnr) and vim.api.nvim_buf_get_name(bufnr) ~= current then
-      vim.api.nvim_buf_delete(bufnr, {})
-    end
-  end
-end, { desc = "Delete all buffers except current" })

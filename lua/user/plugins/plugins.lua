@@ -59,7 +59,14 @@ require("lazy").setup({
 	{
 		"williamboman/mason.nvim",
 		config = function()
-			require("mason").setup({})
+			require("mason").setup({
+				opts = {
+					ensure_installed = {
+						"flake8", -- Add this to your list
+						-- your other tools...
+					},
+				},
+			})
 		end,
 	},
 	{
@@ -152,22 +159,23 @@ require("lazy").setup({
 
 
 	-- Themes editor
-	-- require("user.plugins.themes.nord"),
-	require("user.plugins.themes.catppucin"),
+	require("user.plugins.themes.nord"),
 	-- require("user.plugins.themes.tokyo-night"),
+	-- require("user.plugins.themes.catppucin"),
 	-- require("user.plugins.themes.midnight"),
 	-- require("user.plugins.themes.cyberpunk"),
-	-- require("user.plugins.themes.kanagawa"),
 	-- require("user.plugins.themes.awesome-colorscheme"),
+	-- require("user.plugins.themes.kanagawa"),
 
 
 	require("user.plugins.ai_completions.copilot"),
-	require("user.plugins.ai_completions.gemini"),
+	-- require("user.plugins.ai_completions.gemini"),
 	require("user.plugins.tabline.lua-line"),
 	-- require("user.plugins.scrollers.neoscroll"),
 	require("user.plugins.surrounds.tpope-vim-surround"),
 	require("user.plugins.file_manager.yazi"),
 	require("user.plugins.harpoon.harpoon"),
+	require("user.plugins.finder.flash"),
 	require("user.plugins.git.git-signs"),
 	require("user.plugins.vim-tmux-navigator.vim-tmux-navigator"),
 	require("user.plugins.themes.hexokinase"),

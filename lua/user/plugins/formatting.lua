@@ -22,7 +22,7 @@ return {
 						"graphql",
 						"handlebars"
 					}
-				}),
+				})
 			},
 		})
 
