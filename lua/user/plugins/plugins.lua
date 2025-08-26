@@ -162,9 +162,9 @@ require("lazy").setup({
 	-- require("user.plugins.themes.nord"),
 	-- require("user.plugins.themes.tokyo-night"),
 	-- require("user.plugins.themes.catppucin"),
-	-- require("user.plugins.themes.midnight"),
+	require("user.plugins.themes.midnight"),
 	-- require("user.plugins.themes.cyberpunk"),
-	require("user.plugins.themes.awesome-colorscheme"),
+	-- require("user.plugins.themes.awesome-colorscheme"),
 	-- require("user.plugins.themes.kanagawa"),
 
 
@@ -181,5 +181,6 @@ require("lazy").setup({
 	require("user.plugins.themes.hexokinase"),
 	require("user.plugins.themes.better-cmd-line"),
 	require("user.plugins.themes.dashboard"),
+	require("user.plugins.editors.markdown"),
 	-- require("user.plugins.snacks.snacks")
 })
