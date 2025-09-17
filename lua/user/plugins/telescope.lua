@@ -6,7 +6,7 @@ return {
 		local builtin = require('telescope.builtin')
 		require('telescope').setup({
 			defaults = {
-				initial_mode = 'normal',
+				initial_mode = 'insert',
 				path_display = { truncate = 3 },
 				layout_config = {
 					height = 0.9,
