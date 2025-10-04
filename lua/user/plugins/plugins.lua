@@ -160,12 +160,13 @@ require("lazy").setup({
 
 	-- Themes editor
 	-- require("user.plugins.themes.nord"),
-	require("user.plugins.themes.tokyo-night"),
+	-- require("user.plugins.themes.tokyo-night"),
 	-- require("user.plugins.themes.catppucin"),
 	-- require("user.plugins.themes.midnight"),
 	-- require("user.plugins.themes.cyberpunk"),
 	-- require("user.plugins.themes.awesome-colorscheme"),
 	-- require("user.plugins.themes.kanagawa"),
+	require("user.plugins.themes.github-nvim"),
 
 
 	require("user.plugins.ai_completions.copilot"),
@@ -182,5 +183,6 @@ require("lazy").setup({
 	require("user.plugins.themes.better-cmd-line"),
 	require("user.plugins.themes.dashboard"),
 	require("user.plugins.editors.markdown"),
+	require("user.plugins.buffer_alignment.centerpad"),
 	-- require("user.plugins.snacks.snacks")
 })
