@@ -32,5 +32,8 @@ return {
 				lsp_doc_border = false,   -- add a border to hover docs and signature help
 			},
 		})
+		vim.keymap.set("n", "<Esc>", function()
+			require("notify").dismiss()
+		end, { desc = "Dismiss notify popup" })
 	end,
 }
