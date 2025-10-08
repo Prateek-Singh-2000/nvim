@@ -5,17 +5,6 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 	},
 	config = function()
-		-- Register the SonarLint config
-		local lspconfig = require('lspconfig')
-		lspconfig.cssls.setup {}
-		-- lspconfig.pyright.setup {}
-		-- lspconfig.lua_ls.setup {}
-		lspconfig.html.setup {}
-		-- lspconfig.ts_ls.setup {}
-		-- lspconfig.eslint.setup {}
-		lspconfig.rust_analyzer.setup {}
-
-
 		-- Essential LSP keymaps
 		local opts = { noremap = true, silent = true }
 
