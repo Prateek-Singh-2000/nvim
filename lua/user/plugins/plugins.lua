@@ -161,12 +161,12 @@ require("lazy").setup({
 	-- Themes editor
 	-- require("user.plugins.themes.nord"),
 	-- require("user.plugins.themes.tokyo-night"),
-	-- require("user.plugins.themes.catppucin"),
+	require("user.plugins.themes.catppucin"),
 	-- require("user.plugins.themes.midnight"),
 	-- require("user.plugins.themes.cyberpunk"),
 	-- require("user.plugins.themes.awesome-colorscheme"),
 	-- require("user.plugins.themes.kanagawa"),
-	require("user.plugins.themes.github-nvim"),
+	-- require("user.plugins.themes.github-nvim"),
 
 
 	require("user.plugins.ai_completions.copilot"),
@@ -179,6 +179,7 @@ require("lazy").setup({
 	require("user.plugins.finder.flash"),
 	require("user.plugins.git.git-signs"),
 	require("user.plugins.vim-tmux-navigator.vim-tmux-navigator"),
+	require("user.plugins.vim-tmux-navigator.tmux-vim-statusline"),
 	require("user.plugins.themes.hexokinase"),
 	require("user.plugins.themes.better-cmd-line"),
 	require("user.plugins.themes.dashboard"),
