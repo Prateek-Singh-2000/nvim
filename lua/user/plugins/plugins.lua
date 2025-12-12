@@ -175,7 +175,7 @@ require("lazy").setup({
 	-- require("user.plugins.scrollers.neoscroll"),
 	require("user.plugins.surrounds.tpope-vim-surround"),
 	require("user.plugins.file_manager.yazi"),
-	require("user.plugins.harpoon.harpoon"),
+	require("user.plugins.harpoon.2harpoon"),
 	require("user.plugins.finder.flash"),
 	require("user.plugins.git.git-signs"),
 	require("user.plugins.vim-tmux-navigator.vim-tmux-navigator"),
