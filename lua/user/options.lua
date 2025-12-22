@@ -20,3 +20,5 @@ vim.opt.termguicolors = true
 -- Set case sensitivity to smart sensitivity
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+vim.opt.scrolloff = 7
