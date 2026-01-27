@@ -154,8 +154,8 @@ require("lazy").setup({
 	require("user.plugins.formatting"),
 	require("user.plugins.linters.lspconfig"),
 	require("user.plugins.telescope"),
-	require("lua.user.plugins.treesitter.treesitter"),
-	require("lua.user.plugins.treesitter.treesitter_text_objects"),
+	require("user.plugins.treesitter.treesitter"),
+	require("user.plugins.treesitter.treesitter_text_objects"),
 	require("user.plugins.nvim-cmp"),
 
 
