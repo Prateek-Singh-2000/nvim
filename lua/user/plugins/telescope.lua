@@ -22,6 +22,8 @@ return {
 					"build/",
 					"%.o$",
 					"__pycache__/",
+					"android/",
+					"ios/",
 				}
 			},
 		})
@@ -41,5 +43,6 @@ return {
 		vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = 'Search current word' })
 
 		-- Recent files
-		vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Search recent files' })end,
+		vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Search recent files' })
+	end,
 }

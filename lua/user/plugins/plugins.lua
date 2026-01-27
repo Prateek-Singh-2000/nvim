@@ -154,7 +154,8 @@ require("lazy").setup({
 	require("user.plugins.formatting"),
 	require("user.plugins.linters.lspconfig"),
 	require("user.plugins.telescope"),
-	require("user.plugins.treesitter"),
+	require("lua.user.plugins.treesitter.treesitter"),
+	require("lua.user.plugins.treesitter.treesitter_text_objects"),
 	require("user.plugins.nvim-cmp"),
 
 
@@ -164,7 +165,7 @@ require("lazy").setup({
 	require("user.plugins.themes.catppucin"),
 	-- require("user.plugins.themes.midnight"),
 	-- require("user.plugins.themes.cyberpunk"),
-	-- require("user.plugins.themes.awesome-colorscheme"),
+	require("user.plugins.themes.awesome-colorscheme"),
 	-- require("user.plugins.themes.kanagawa"),
 	-- require("user.plugins.themes.github-nvim"),
 
