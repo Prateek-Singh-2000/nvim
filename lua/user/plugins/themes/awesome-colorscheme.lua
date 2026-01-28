@@ -5,7 +5,8 @@ return {
 	opts = {},
 	config = function()
 		-- vim.cmd.colorscheme("twilight256")
-		vim.cmd.colorscheme("sierra")
+		vim.cmd.colorscheme("github")
+		-- vim.cmd.colorscheme("sierra")
 		-- vim.cmd.colorscheme("nord")
 		-- vim.cmd.colorscheme("alduin")
 	end
