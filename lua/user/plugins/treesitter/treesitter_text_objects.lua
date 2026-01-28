@@ -7,7 +7,6 @@ return {
     require("nvim-treesitter.configs").setup({
       textobjects = {
 
-        -- 🎯 SELECT
         select = {
           enable = true,
           lookahead = true, -- auto-jump forward
@@ -19,11 +18,11 @@ return {
             ["ac"] = "@class.outer",
             ["ic"] = "@class.inner",
 
-            ["aa"] = "@parameter.outer",
             ["ia"] = "@parameter.inner",
+            ["aa"] = "@parameter.outer",
 
-            ["ab"] = "@block.outer",
-            ["ib"] = "@block.inner",
+            -- ["ab"] = "@block.outer",
+            -- ["ib"] = "@block.inner",
 
             ["ai"] = "@conditional.outer",
             ["ii"] = "@conditional.inner",
@@ -33,7 +32,6 @@ return {
           },
         },
 
-        -- 🚀 MOVE
         move = {
           enable = true,
           set_jumps = true, -- integrate with jump list
@@ -56,7 +54,6 @@ return {
           },
         },
 
-        -- 🔁 SWAP (parameters)
         swap = {
           enable = true,
           swap_next = {
