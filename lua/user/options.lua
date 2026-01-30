@@ -22,3 +22,6 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.scrolloff = 7
+
+-- Add this line to ensure the eslint_d daemon stops when Neovim exits
+vim.env.ESLINT_D_PPID = vim.fn.getpid()

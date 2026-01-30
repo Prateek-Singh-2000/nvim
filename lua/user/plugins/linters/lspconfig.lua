@@ -3,10 +3,25 @@ return {
 	dependencies = {
 		"mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
+		"hrsh7th/cmp-nvim-lsp",
 	},
 	config = function()
 		-- Essential LSP keymaps
 		local opts = { noremap = true, silent = true }
+		local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+		vim.lsp.config("pyright", {
+			capabilities = capabilities,
+		})
+
+		vim.lsp.config("ts_ls", {
+			capabilities = capabilities,
+			on_attach = function(client, bufnr)
+				-- THIS disables ts_ls formatting so conform.nvim/prettierd can take over
+				client.server_capabilities.documentFormattingProvider = false
+				client.server_capabilities.documentRangeFormattingProvider = false
+			end,
+		})
 
 		-- Existing keymaps
 		vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })

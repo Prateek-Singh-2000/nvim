@@ -21,8 +21,8 @@ return {
             ["ia"] = "@parameter.inner",
             ["aa"] = "@parameter.outer",
 
-            -- ["ab"] = "@block.outer",
-            -- ["ib"] = "@block.inner",
+            ["ak"] = "@block.outer",
+            ["ik"] = "@block.inner",
 
             ["ai"] = "@conditional.outer",
             ["ii"] = "@conditional.inner",

@@ -24,6 +24,8 @@ return {
 					}
 				})
 			},
+			-- null_ls.builtins.diagnostics.eslint_d,
+			-- null_ls.builtins.code_actions.eslint_d,
 		})
 
 		-- Create format keymap, fr is "format"

@@ -151,8 +151,9 @@ require("lazy").setup({
 	{
 		"ThePrimeagen/vim-be-good",
 	},
-	require("user.plugins.formatting"),
+	require("user.plugins.formatters.conform"),
 	require("user.plugins.linters.lspconfig"),
+	require("user.plugins.linters.nvim-lint"),
 	require("user.plugins.telescope"),
 	require("user.plugins.treesitter.treesitter"),
 	require("user.plugins.treesitter.treesitter_text_objects"),
