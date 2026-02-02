@@ -19,3 +19,9 @@ vim.keymap.set('v', '<leader>d', '"_d',
 -- Remap Ctrl-f to scroll half page up (like Ctrl-u)
 vim.keymap.set("n", "<C-f>", "<C-u>", { desc = "Scroll half page up" })
 vim.keymap.set("v", "<C-f>", "<C-u>", { desc = "Scroll half page up" })
+
+-- Terminal mode keymaps
+-- Enter terminal mode easily
+vim.keymap.set('n', '<leader>t', ':terminal<CR>i')
+-- Exit terminal mode to normal mode
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')

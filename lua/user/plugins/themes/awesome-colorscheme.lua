@@ -6,6 +6,7 @@ return {
 	config = function()
 		-- vim.cmd.colorscheme("twilight256")
 		vim.cmd.colorscheme("lightning")
+		-- vim.cmd.colorscheme("carbonized-light")
 		-- vim.cmd.colorscheme("OceanicNext")
 		-- vim.cmd.colorscheme("sierra")
 		-- vim.cmd.colorscheme("nord")
