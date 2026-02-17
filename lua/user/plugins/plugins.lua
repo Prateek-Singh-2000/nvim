@@ -163,17 +163,17 @@ require("lazy").setup({
 
 	-- Themes editor
 	-- require("user.plugins.themes.nord"),
-	-- require("user.plugins.themes.tokyo-night"),
+	require("user.plugins.themes.tokyo-night"),
 	require("user.plugins.themes.catppucin"),
 	-- require("user.plugins.themes.midnight"),
 	-- require("user.plugins.themes.cyberpunk"),
 	require("user.plugins.themes.awesome-colorscheme"),
-	-- require("user.plugins.themes.kanagawa"),
+	require("user.plugins.themes.kanagawa"),
 	-- require("user.plugins.themes.github-nvim"),
 
 
-	require("user.plugins.ai_completions.copilot"),
-	-- require("user.plugins.ai_completions.gemini"),
+	-- require("user.plugins.ai_completions.copilot"),
+	require("user.plugins.ai_completions.gemini-autocomplete"),
 	require("user.plugins.tabline.lua-line"),
 	-- require("user.plugins.scrollers.neoscroll"),
 	require("user.plugins.surrounds.tpope-vim-surround"),

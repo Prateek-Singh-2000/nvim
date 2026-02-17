@@ -37,8 +37,8 @@ return {
 		vim.keymap.set('n', '<leader>fs', builtin.current_buffer_fuzzy_find, { desc = 'Search in current buffer' })
 
 		-- Git related
-		vim.keymap.set('n', '<leader>gc', builtin.git_commits, { desc = 'Search git commits' })
-		vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'Search git branches' })
+		-- vim.keymap.set('n', '<leader>gc', builtin.git_commits, { desc = 'Search git commits' })
+		-- vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'Search git branches' })
 
 		-- Search for word under cursor
 		vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = 'Search current word' })

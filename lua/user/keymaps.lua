@@ -15,6 +15,7 @@ vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", { noremap = true })
 vim.keymap.set('n', '<leader>dd', '"_dd', { desc = 'Delete line without yank (blackhole)', noremap = true, silent = true })
 vim.keymap.set('v', '<leader>d', '"_d',
 	{ desc = 'Delete visual lines without yank (blackhole)', noremap = true, silent = true })
+vim.keymap.set("n", "x", '"_x', { desc = 'Delete character without yank (blackhole)', noremap = true, silent = true })
 
 -- Remap Ctrl-f to scroll half page up (like Ctrl-u)
 vim.keymap.set("n", "<C-f>", "<C-u>", { desc = "Scroll half page up" })
