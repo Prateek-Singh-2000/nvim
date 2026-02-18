@@ -1,5 +1,11 @@
 return {
 	'flyingshutter/gemini-autocomplete.nvim',
+	opts = {
+		completion = {
+			blacklist_filetypes = { 'help', 'qf', 'yaml', 'toml', 'xml' },
+			blacklist_filenames = { '.env' },
+		}
+	},
 	config = function()
 		local gemini = require 'gemini-autocomplete'
 		gemini.setup {
