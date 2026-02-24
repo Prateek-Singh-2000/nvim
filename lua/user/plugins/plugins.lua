@@ -188,5 +188,6 @@ require("lazy").setup({
 	require("user.plugins.themes.dashboard"),
 	require("user.plugins.editors.markdown"),
 	require("user.plugins.buffer_alignment.centerpad"),
+	require("user.plugins.nvim-biscuits.nvim-biscuits"),
 	-- require("user.plugins.snacks.snacks")
 })
