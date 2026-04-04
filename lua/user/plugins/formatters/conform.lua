@@ -8,7 +8,7 @@ return {
 		conform.setup({
 			-- Map filetypes to their formatters
 			formatters_by_ft = {
-				python = { "black" },
+				python = {  "ruff","black" },
 				
 				-- Web Development: Try 'prettierd' first (fast), fallback to 'prettier' (slow)
 				javascript = { "prettierd", "prettier", stop_after_first = true },

@@ -3,8 +3,10 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	config = function()
 		-- Set fold method to use treesitter
-		vim.opt.foldmethod = "expr"
-		vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+		-- vim.opt.foldmethod = "expr"
+		-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+		vim.opt.foldmethod = "manual"
+		vim.opt.foldexpr = ""
 		-- Start with all folds open (0 = all open, 99 = all closed)
 		vim.opt.foldlevel = 99
 		-- Disable folding at startup

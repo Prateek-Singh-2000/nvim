@@ -96,20 +96,20 @@ require("lazy").setup({
 			}
 		end,
 	},
-	{
-		"nvim-tree/nvim-web-devicons",
-	},
-	{
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		lazy = false,
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-		config = function()
-			require("user.plugins.nvim-tree-config")
-		end,
-	},
+	-- {
+	-- 	"nvim-tree/nvim-web-devicons",
+	-- },
+	-- {
+	-- 	"nvim-tree/nvim-tree.lua",
+	-- 	version = "*",
+	-- 	lazy = false,
+	-- 	dependencies = {
+	-- 		"nvim-tree/nvim-web-devicons",
+	-- 	},
+	-- 	config = function()
+	-- 		require("user.plugins.nvim-tree-config")
+	-- 	end,
+	-- },
 	{
 		"nvimtools/none-ls.nvim",
 		dependencies = {
@@ -172,8 +172,8 @@ require("lazy").setup({
 	-- require("user.plugins.themes.github-nvim"),
 
 
-	-- require("user.plugins.ai_completions.copilot"),
-	require("user.plugins.ai_completions.gemini-autocomplete"),
+	require("user.plugins.ai_completions.copilot"),
+	-- require("user.plugins.ai_completions.gemini-autocomplete"),
 	require("user.plugins.tabline.lua-line"),
 	-- require("user.plugins.scrollers.neoscroll"),
 	require("user.plugins.surrounds.tpope-vim-surround"),

@@ -14,6 +14,10 @@ return {
 			capabilities = capabilities,
 		})
 
+		-- vim.lsp.config("basedpyright", {
+		-- 	capabilities = capabilities,
+		-- })
+
 		vim.lsp.config("ts_ls", {
 			capabilities = capabilities,
 			on_attach = function(client, bufnr)
@@ -22,6 +26,13 @@ return {
 				client.server_capabilities.documentRangeFormattingProvider = false
 			end,
 		})
+
+		-- vim.lsp.config("ruff", {
+		-- 	on_attach = function(client)
+		-- 		-- Disable diagnostics from the Ruff LSP
+		-- 		client.server_capabilities.diagnosticProvider = false
+		-- 	end,
+		-- })
 
 		-- Existing keymaps
 		vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })

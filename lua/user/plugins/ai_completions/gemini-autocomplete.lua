@@ -19,7 +19,7 @@ return {
 		require('gemini-autocomplete.external').make_mini_statusline()
 
 		vim.keymap.set('n', '<leader>gt', gemini.toggle_enabled, { desc = '[G]emini [T]oggle Autocompletion' })
-		vim.keymap.set('n', '<leader>gg', gemini.add_gitfiles, { desc = '[G]emini add [G]itfiles' })
+		-- vim.keymap.set('n', '<leader>gg', gemini.add_gitfiles, { desc = '[G]emini add [G]itfiles' })
 		vim.keymap.set('n', '<leader>ge', gemini.edit_context, { desc = '[G]emini [E]dit Context' })
 		vim.keymap.set('n', '<leader>gp', gemini.prompt_code, { desc = '[G]emini [P]rompt Code' })
 		vim.keymap.set('n', '<leader>gc', gemini.clear_context, { desc = '[G]emini [C]lear Context' })

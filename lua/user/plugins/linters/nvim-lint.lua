@@ -6,7 +6,7 @@ return {
 
     -- 1. Define your linters per filetype
     lint.linters_by_ft = {
-      -- python = { "mypy" },
+      -- python = { "ruff" },
       -- typescript = { "eslint_d" },
       -- typescriptreact = { "eslint_d" },
       -- javascript = { "eslint_d" },

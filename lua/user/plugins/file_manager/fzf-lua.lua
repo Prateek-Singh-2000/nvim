@@ -7,7 +7,6 @@ return {
 
 		fzf.setup({
 			-- "default" | "max-perf" | "ivy" | "telescope"
-			-- "telescope" profile makes it look like your current setup
 			{ "telescope" },
 			winopts = {
 				height = 0.9,
