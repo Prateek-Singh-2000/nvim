@@ -96,20 +96,20 @@ require("lazy").setup({
 			}
 		end,
 	},
-	-- {
-	-- 	"nvim-tree/nvim-web-devicons",
-	-- },
-	-- {
-	-- 	"nvim-tree/nvim-tree.lua",
-	-- 	version = "*",
-	-- 	lazy = false,
-	-- 	dependencies = {
-	-- 		"nvim-tree/nvim-web-devicons",
-	-- 	},
-	-- 	config = function()
-	-- 		require("user.plugins.nvim-tree-config")
-	-- 	end,
-	-- },
+	{
+		"nvim-tree/nvim-web-devicons",
+	},
+	{
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
+		lazy = false,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("user.plugins.nvim-tree-config")
+		end,
+	},
 	{
 		"nvimtools/none-ls.nvim",
 		dependencies = {
@@ -163,12 +163,13 @@ require("lazy").setup({
 
 	-- Themes editor
 	-- require("user.plugins.themes.nord"),
-	require("user.plugins.themes.tokyo-night"),
-	require("user.plugins.themes.catppucin"),
+	-- require("user.plugins.themes.tokyo-night"),
+	-- require("user.plugins.themes.catppucin"),
 	-- require("user.plugins.themes.midnight"),
 	-- require("user.plugins.themes.cyberpunk"),
+	-- require("user.plugins.themes.nightfox"),
 	require("user.plugins.themes.awesome-colorscheme"),
-	require("user.plugins.themes.kanagawa"),
+	-- require("user.plugins.themes.kanagawa"),
 	-- require("user.plugins.themes.github-nvim"),
 
 

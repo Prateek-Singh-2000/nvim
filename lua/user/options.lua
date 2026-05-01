@@ -17,6 +17,8 @@ vim.opt.clipboard = "unnamedplus"
 
 vim.opt.termguicolors = true
 
+vim.opt.colorcolumn = "90"
+
 -- Set case sensitivity to smart sensitivity
 vim.opt.ignorecase = true
 vim.opt.smartcase = true

@@ -1,14 +1,10 @@
 return {
-	"folke/tokyonight.nvim",
-	lazy = false,
-	priority = 1000,
-	opts = {},
+	"EdenEast/nightfox.nvim",
 	init = function()
 		vim.g.tpipeline_clearstl = 1
 	end,
-
 	config = function()
-		vim.cmd.colorscheme("tokyonight-night")
+		vim.cmd.colorscheme("nightfox")
 		vim.opt.laststatus = 0
 		vim.opt.statusline = " "
 		vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE", fg = "NONE" })
