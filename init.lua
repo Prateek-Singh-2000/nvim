@@ -10,15 +10,15 @@ require("user.plugins.plugins")
 M = {}
 
 M.set_shada = function()
-  local cwd = vim.fn.getcwd()
-  local dir_name = vim.fn.fnamemodify(cwd, ":t")
-  local hash = vim.fn.sha256(cwd):sub(1, 8)
-  
-  local project_dir = vim.fn.stdpath("data") .. "/myshada/" .. dir_name
-  vim.fn.mkdir(project_dir, "p")  -- "p" flag already handles "directory exists" case
-  
-  local shadafile = project_dir .. "/" .. hash .. ".shada"
-  vim.opt.shadafile = shadafile
+	local cwd = vim.fn.getcwd()
+	local dir_name = vim.fn.fnamemodify(cwd, ":t")
+	local hash = vim.fn.sha256(cwd):sub(1, 8)
+
+	local project_dir = vim.fn.stdpath("data") .. "/myshada/" .. dir_name
+	vim.fn.mkdir(project_dir, "p")  -- "p" flag already handles "directory exists" case
+
+	local shadafile = project_dir .. "/" .. hash .. ".shada"
+	vim.opt.shadafile = shadafile
 end
 
 M.set_shada()
@@ -72,3 +72,12 @@ M.set_shada()
 -- vim.keymap.set("n", "<leader>t", ToggleFloatTerm, { desc = "Toggle floating terminal" })
 -- vim.keymap.set("t", "<C-q>", "<C-\\><C-n>:lua ToggleFloatTerm()<CR>")
 -- vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
+-- Force the Neovim statusline to remain transparent on all major events
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "ColorScheme", "VimEnter" }, {
+    pattern = "*",
+    callback = function()
+        vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE", fg = "NONE" })
+        vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE", fg = "NONE" })
+    end,
+})

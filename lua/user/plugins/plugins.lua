@@ -164,14 +164,15 @@ require("lazy").setup({
 	-- Themes editor
 	require("user.plugins.themes.system-mode-changer"),
 	-- require("user.plugins.themes.nord"),
-	require("user.plugins.themes.tokyo-night"),
-	require("user.plugins.themes.catppucin"),
-	require("user.plugins.themes.gruvbox"),
+	-- require("user.plugins.themes.tokyo-night"),
+	-- require("user.plugins.themes.catppucin"),
+	-- require("user.plugins.themes.gruvbox"),
 	-- require("user.plugins.themes.midnight"),
 	-- require("user.plugins.themes.cyberpunk"),
 	-- require("user.plugins.themes.nightfox"),
-	require("user.plugins.themes.awesome-colorscheme"),
-	require("user.plugins.themes.kanagawa"),
+	-- require("user.plugins.themes.awesome-colorscheme"),
+	-- require("user.plugins.themes.kanagawa"),
+	require("user.plugins.themes.rose-pine"),
 	-- require("user.plugins.themes.github-nvim"),
 
 

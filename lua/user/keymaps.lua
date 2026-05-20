@@ -26,17 +26,17 @@ vim.keymap.set("v", "<C-f>", "<C-u>", { desc = "Scroll half page up" })
 local term_buf = nil
 
 local function toggle_terminal()
-  -- Check if terminal buffer exists and is valid
-  if term_buf and vim.api.nvim_buf_is_valid(term_buf) then
-    -- Switch to the terminal buffer
-    vim.api.nvim_set_current_buf(term_buf)
-    vim.cmd('startinsert')
-  else
-    -- Create new terminal
-    vim.cmd('terminal')
-    term_buf = vim.api.nvim_get_current_buf()
-    vim.cmd('startinsert')
-  end
+	-- Check if terminal buffer exists and is valid
+	if term_buf and vim.api.nvim_buf_is_valid(term_buf) then
+		-- Switch to the terminal buffer
+		vim.api.nvim_set_current_buf(term_buf)
+		vim.cmd('startinsert')
+	else
+		-- Create new terminal
+		vim.cmd('terminal')
+		term_buf = vim.api.nvim_get_current_buf()
+		vim.cmd('startinsert')
+	end
 end
 
 vim.keymap.set('n', '<leader>t', toggle_terminal)
