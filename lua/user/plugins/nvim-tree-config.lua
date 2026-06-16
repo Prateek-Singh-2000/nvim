@@ -52,6 +52,6 @@ return require("nvim-tree").setup({
 		-- Switch between nvim-tree and opened file
 		-- vim.keymap.set('n', '<C-h>', ':NvimTreeFocus<CR>', { silent = true })
 		vim.keymap.set('n', '<C-h>', '<C-w>h', { silent = true })
-		vim.keymap.set('n', '<C-l>', '<C-w>l', { silent = true })
+		-- vim.keymap.set('n', '<C-l>', '<C-w>l', { silent = true })
 	end,
 })

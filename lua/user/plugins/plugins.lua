@@ -175,8 +175,7 @@ require("lazy").setup({
 	require("user.plugins.themes.rose-pine"),
 
 
-	-- require("user.plugins.ai_completions.copilot"),
-	require("user.plugins.ai_completions.sidekick"),
+	require("user.plugins.ai_completions.neocodium"),
 	-- require("user.plugins.ai_completions.gemini-autocomplete"),
 	require("user.plugins.tabline.lua-line"),
 	require("user.plugins.surrounds.tpope-vim-surround"),
