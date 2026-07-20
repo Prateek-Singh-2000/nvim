@@ -4,10 +4,16 @@ return {
 	config = function()
 		local neocodeium = require("neocodeium")
 		neocodeium.setup({
+			filter = function(bufnr)
+				local name = vim.api.nvim_buf_get_name(bufnr)
+				if name:match("%.env") then
+					return false
+				end
+				return true
+			end,
 		})
 
 		vim.keymap.set("n", "<leader>cd", "<cmd>NeoCodeium disable<CR>", { desc = "Disable Codeium" })
-
 		vim.keymap.set("n", "<leader>ce", "<cmd>NeoCodeium enable<CR>", { desc = "Enable Codeium" })
 
 		vim.keymap.set("i", "<C-l>", function() neocodeium.accept() end, { desc = "Codeium Accept" })
