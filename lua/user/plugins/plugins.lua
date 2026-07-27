@@ -158,7 +158,7 @@ require("lazy").setup({
 	require("user.plugins.themes.better-cmd-line"),
 	require("user.plugins.themes.dashboard"),
 	require("user.plugins.editors.markdown"),
-	require("lua.user.plugins.beautify.centerpad"),
-	require("lua.user.plugins.beautify.dressing"),
+	require("user.plugins.beautify.centerpad"),
+	require("user.plugins.beautify.dressing"),
 	require("user.plugins.nvim-biscuits.nvim-biscuits"),
 })

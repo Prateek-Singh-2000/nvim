@@ -4,216 +4,153 @@ local t = ls.text_node
 local i = ls.insert_node
 local f = ls.function_node
 
--- Add TypeScript snippets
+local function capitalize(args)
+	local str = args[1][1] or ""
+	return str:gsub("^%l", string.upper)
+end
+
+ls.filetype_extend("typescriptreact", { "typescript" })
+
 ls.add_snippets("typescript", {
-	-- Console log
 	s("cl", {
 		t("console.log("),
 		i(1, "value"),
 		t(");"),
-		i(0)
+		i(0),
 	}),
 
-	-- Console log with variable name
 	s("clv", {
 		t("console.log('"),
 		i(1, "varName"),
 		t(":', "),
-		f(function(args) return args[1][1] end, {1}),
+		f(function(args) return args[1][1] end, { 1 }),
 		t(");"),
-		i(0)
+		i(0),
 	}),
 
-	-- Arrow function
 	s("af", {
 		t("const "),
 		i(1, "funcName"),
 		t(" = ("),
 		i(2, "params"),
 		t(") => {"),
-		t({"", "  "}),
+		t({ "", "  " }),
 		i(0),
-		t({"", "}"})
+		t({ "", "}" }),
 	}),
 
-	-- Async arrow function
 	s("aaf", {
 		t("const "),
 		i(1, "funcName"),
 		t(" = async ("),
 		i(2, "params"),
 		t(") => {"),
-		t({"", "  "}),
+		t({ "", "  " }),
 		i(0),
-		t({"", "}"})
+		t({ "", "}" }),
 	}),
 
-	-- Interface
 	s("int", {
 		t("interface "),
 		i(1, "InterfaceName"),
 		t(" {"),
-		t({"", "  "}),
+		t({ "", "  " }),
 		i(0),
-		t({"", "}"})
+		t({ "", "}" }),
 	}),
 
-	-- Type alias
 	s("type", {
 		t("type "),
 		i(1, "TypeName"),
 		t(" = "),
 		i(0),
-		t(";")
+		t(";"),
 	}),
 
-	-- Import statement
 	s("imp", {
 		t("import { "),
 		i(1, "module"),
 		t(" } from '"),
 		i(2, "path"),
 		t("';"),
-		i(0)
+		i(0),
 	}),
 
-	-- Import default
 	s("impd", {
 		t("import "),
 		i(1, "module"),
 		t(" from '"),
 		i(2, "path"),
 		t("';"),
-		i(0)
+		i(0),
 	}),
 
-	-- Try-catch
 	s("tryc", {
 		t("try {"),
-		t({"", "  "}),
+		t({ "", "  " }),
 		i(1),
-		t({"", "} catch ("}),
+		t({ "", "} catch (" }),
 		i(2, "error"),
 		t(") {"),
-		t({"", "  "}),
+		t({ "", "  " }),
 		i(0),
-		t({"", "}"})
+		t({ "", "}" }),
 	}),
 
-	-- Promise
 	s("prom", {
 		t("new Promise<"),
 		i(1, "type"),
 		t(">((resolve, reject) => {"),
-		t({"", "  "}),
+		t({ "", "  " }),
 		i(0),
-		t({"", "})"})
+		t({ "", "})" }),
 	}),
 })
 
 ls.add_snippets("typescriptreact", {
-	-- Console log
-	s("cl", {
-		t("console.log("),
-		i(1, "value"),
-		t(");"),
-		i(0)
-	}),
-
-	-- Console log with variable name
-	s("clv", {
-		t("console.log('"),
-		i(1, "varName"),
-		t(":', "),
-		f(function(args) return args[1][1] end, {1}),
-		t(");"),
-		i(0)
-	}),
-
-	-- Arrow function
-	s("af", {
-		t("const "),
-		i(1, "funcName"),
-		t(" = ("),
-		i(2, "params"),
+	s("rfc", {
+		t("interface "), i(1, "Props"), t({ " {", "  " }), i(2), t({ "", "}", "", "" }),
+		t("export const "), i(3, "Component"), t(" = ({ "), i(4), t(" }: "), f(function(args) return args[1][1] end, { 1 }),
 		t(") => {"),
-		t({"", "  "}),
+		t({ "", "  return (" }),
+		t({ "", "    <div>" }),
 		i(0),
-		t({"", "}"})
+		t({ "", "    </div>" }),
+		t({ "", "  );" }),
+		t({ "", "};" }),
 	}),
 
-	-- Async arrow function
-	s("aaf", {
-		t("const "),
-		i(1, "funcName"),
-		t(" = async ("),
-		i(2, "params"),
-		t(") => {"),
-		t({"", "  "}),
+	s("us", {
+		t("const ["), i(1, "state"), t(", set"), f(capitalize, { 1 }), t("] = useState"),
+		t("<"), i(2, "type"), t(">("), i(3, "initialValue"), t(");"),
 		i(0),
-		t({"", "}"})
 	}),
 
-	-- Interface
-	s("int", {
-		t("interface "),
-		i(1, "InterfaceName"),
-		t(" {"),
-		t({"", "  "}),
-		i(0),
-		t({"", "}"})
-	}),
-
-	-- Type alias
-	s("type", {
-		t("type "),
-		i(1, "TypeName"),
-		t(" = "),
-		i(0),
-		t(";")
-	}),
-
-	-- Import statement
-	s("imp", {
-		t("import { "),
-		i(1, "module"),
-		t(" } from '"),
-		i(2, "path"),
-		t("';"),
-		i(0)
-	}),
-
-	-- Import default
-	s("impd", {
-		t("import "),
-		i(1, "module"),
-		t(" from '"),
-		i(2, "path"),
-		t("';"),
-		i(0)
-	}),
-
-	-- Try-catch
-	s("tryc", {
-		t("try {"),
-		t({"", "  "}),
+	s("ue", {
+		t({ "useEffect(() => {", "  " }),
 		i(1),
-		t({"", "} catch ("}),
-		i(2, "error"),
-		t(") {"),
-		t({"", "  "}),
+		t({ "", "}, [" }),
+		i(2),
+		t("]);"),
 		i(0),
-		t({"", "}"})
 	}),
 
-	-- Promise
-	s("prom", {
-		t("new Promise<"),
-		i(1, "type"),
-		t(">((resolve, reject) => {"),
-		t({"", "  "}),
+	s("uc", {
+		t("const "), i(1, "memoizedCallback"), t(" = useCallback(("), i(2, "params"), t(") => {"),
+		t({ "", "  " }), i(3),
+		t({ "", "}, [" }), i(4), t("]);"),
 		i(0),
-		t({"", "})"})
+	}),
+
+	s("um", {
+		t("const "), i(1, "memoizedValue"), t(" = useMemo(() => {"),
+		t({ "", "  return " }), i(2),
+		t({ "", "}, [" }), i(3), t("]);"),
+		i(0),
+	}),
+
+	s("ur", {
+		t("const "), i(1, "ref"), t(" = useRef<"), i(2, "HTMLDivElement"), t(">("), i(3, "null"), t(");"),
+		i(0),
 	}),
 })
-
