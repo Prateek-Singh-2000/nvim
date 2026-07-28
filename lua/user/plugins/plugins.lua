@@ -136,6 +136,7 @@ require("lazy").setup({
 	require("user.plugins.treesitter.treesitter"),
 	require("user.plugins.treesitter.treesitter_text_objects"),
 	require("user.plugins.nvim-cmp"),
+	require("user.plugins.diagnostics.trouble"),
 
 
 	-- Themes editor
