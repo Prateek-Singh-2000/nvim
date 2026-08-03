@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<Leader>x", ":nohlsearch<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>xl", ":nohlsearch<CR>", { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
@@ -18,6 +18,9 @@ vim.keymap.set("v", "<C-f>", "<C-u>", { desc = "Scroll half page up" })
 
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+
+-- Use leader ss to save changes
+vim.keymap.set("n", "<leader>ss", ":wa<CR>", { desc = "Save changes" })
 
 -- Paste from the yank register using Ctrl+p in Normal and Visual mode
 vim.keymap.set({ "n", "v" }, "<C-p>", '"0p', { noremap = true, desc = "Paste from yank register" })
@@ -63,7 +66,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking text",
   group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
   callback = function()
-    vim.highlight.on_yank({ higroup = "IncSearch", timeout = 300 })
+    vim.highlight.on_yank({ higroup = "IncSearch", timeout = 150 })
   end,
 })
 
