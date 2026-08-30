@@ -34,6 +34,7 @@ return {
 		})
 		vim.keymap.set("n", "<Esc>", function()
 			require("notify").dismiss()
+			vim.cmd("nohlsearch")
 		end, { desc = "Dismiss notify popup" })
 	end,
 }

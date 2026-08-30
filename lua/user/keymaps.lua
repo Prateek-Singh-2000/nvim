@@ -1,4 +1,5 @@
-vim.keymap.set("n", "<Leader>xl", ":nohlsearch<CR>", { noremap = true, silent = true })
+-- Clear highlights on search when pressing <Esc> in normal mode
+vim.keymap.set("n", "<leader>xl", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
 
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
@@ -6,24 +7,42 @@ vim.keymap.set("n", "==", "mzgg=G`z", { desc = "Format whole file without moving
 
 vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-o>", "<C-o>zz", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-i>", "<C-i>zz", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-f>", "<C-u>zz", { noremap = true })
 
-vim.keymap.set('n', '<leader>dd', '"_dd',
-	{ desc = 'Delete line without yank (blackhole)', noremap = true, silent = true })
-vim.keymap.set('v', '<leader>d', '"_d',
-	{ desc = 'Delete visual lines without yank (blackhole)', noremap = true, silent = true })
-vim.keymap.set("n", "x", '"_x', { desc = 'Delete character without yank (blackhole)', noremap = true, silent = true })
+vim.keymap.set({ 'n', 'v' }, 'd', '"_d',
+	{ desc = 'Delete without yank (blackhole)', noremap = true, silent = true })
 
-vim.keymap.set("n", "<C-f>", "<C-u>", { desc = "Scroll half page up" })
-vim.keymap.set("v", "<C-f>", "<C-u>", { desc = "Scroll half page up" })
+vim.keymap.set('n', 'x', '"_x',
+	{ desc = 'Delete char without yank (blackhole)', noremap = true, silent = true })
+
+vim.keymap.set({ 'n', 'v' }, '<leader>d', 'd',
+	{ desc = 'Delete with yank (default register)', noremap = true, silent = true })
+
 
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- Use leader ss to save changes
-vim.keymap.set("n", "<leader>ss", ":wa<CR>", { desc = "Save changes" })
+-- Center line when jumping to mark
+vim.keymap.set("n", "'", function()
+	local mark = vim.fn.getcharstr()
+	if mark == "\27" then return "" end   -- Esc cancels
+	return "'" .. mark .. "zz"
+end, { expr = true, desc = "Jump to mark (line) and center" })
+
+-- Center line when jumping to exact mark
+vim.keymap.set("n", "`", function()
+	local mark = vim.fn.getcharstr()
+	if mark == "\27" then return "" end   -- Esc cancels
+	return "`" .. mark .. "zz"
+end, { expr = true, desc = "Jump to mark (char) and center" })
 
 -- Paste from the yank register using Ctrl+p in Normal and Visual mode
 vim.keymap.set({ "n", "v" }, "<C-p>", '"0p', { noremap = true, desc = "Paste from yank register" })
+
+-- Paste over selection without yanking
+vim.keymap.set("x", "p", "P", { noremap = true, desc = "Paste over selection without yanking" })
 
 local term_buf = nil
 
@@ -63,11 +82,11 @@ end
 vim.keymap.set('n', '<leader>m', toggle_maximize, { desc = "Toggle maximize split" })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking text",
-  group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
-  callback = function()
-    vim.highlight.on_yank({ higroup = "IncSearch", timeout = 150 })
-  end,
+	desc = "Highlight when yanking text",
+	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 150 })
+	end,
 })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
