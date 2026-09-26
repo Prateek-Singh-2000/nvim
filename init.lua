@@ -15,7 +15,7 @@ M.set_shada = function()
 	local hash = vim.fn.sha256(cwd):sub(1, 8)
 
 	local project_dir = vim.fn.stdpath("data") .. "/myshada/" .. dir_name
-	vim.fn.mkdir(project_dir, "p")  -- "p" flag already handles "directory exists" case
+	vim.fn.mkdir(project_dir, "p") -- "p" flag already handles "directory exists" case
 
 	local shadafile = project_dir .. "/" .. hash .. ".shada"
 	vim.opt.shadafile = shadafile
@@ -75,9 +75,15 @@ M.set_shada()
 
 -- Force the Neovim statusline to remain transparent on all major events
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "ColorScheme", "VimEnter" }, {
-    pattern = "*",
-    callback = function()
-        vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE", fg = "NONE" })
-        vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE", fg = "NONE" })
-    end,
+	pattern = "*",
+	callback = function()
+		vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE", fg = "NONE" })
+		vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE", fg = "NONE" })
+	end,
+})
+
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		vim.cmd("Screenkey toggle")
+	end,
 })

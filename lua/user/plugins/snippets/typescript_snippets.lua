@@ -120,7 +120,7 @@ ls.add_snippets("typescriptreact", {
 		t({ "", "};" }),
 	}),
 
-	s("us", {
+	s("ust", {
 		t("const ["), i(1, "state"), t(", set"), f(capitalize, { 1 }), t("] = useState"),
 		t("<"), i(2, "type"), t(">("), i(3, "initialValue"), t(");"),
 		i(0),

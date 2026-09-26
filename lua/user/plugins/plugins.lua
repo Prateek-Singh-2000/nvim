@@ -161,5 +161,6 @@ require("lazy").setup({
 	require("user.plugins.editors.markdown"),
 	require("user.plugins.beautify.centerpad"),
 	require("user.plugins.beautify.dressing"),
+	require("user.plugins.beautify.screenkey"),
 	require("user.plugins.nvim-biscuits.nvim-biscuits"),
 })

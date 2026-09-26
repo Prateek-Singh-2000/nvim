@@ -5,11 +5,14 @@ vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent
 
 vim.keymap.set("n", "==", "mzgg=G`z", { desc = "Format whole file without moving cursor" })
 
-vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-o>", "<C-o>zz", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-i>", "<C-i>zz", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-f>", "<C-u>zz", { noremap = true })
+local opts = { noremap = true, silent = true }
+
+vim.keymap.set({ "n", "v" }, "<C-d>", "<C-d>zz", opts)
+vim.keymap.set({ "n", "v" }, "<C-u>", "<C-u>zz", opts)
+vim.keymap.set({ "n", "v" }, "<C-o>", "<C-o>zz", opts)
+vim.keymap.set({ "n", "v" }, "<C-i>", "<C-i>zz", opts)
+vim.keymap.set({ "n", "v" }, "<C-f>", "<C-u>zz", opts)
+
 
 vim.keymap.set({ 'n', 'v' }, 'd', '"_d',
 	{ desc = 'Delete without yank (blackhole)', noremap = true, silent = true })
@@ -27,14 +30,14 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- Center line when jumping to mark
 vim.keymap.set("n", "'", function()
 	local mark = vim.fn.getcharstr()
-	if mark == "\27" then return "" end   -- Esc cancels
+	if mark == "\27" then return "" end -- Esc cancels
 	return "'" .. mark .. "zz"
 end, { expr = true, desc = "Jump to mark (line) and center" })
 
 -- Center line when jumping to exact mark
 vim.keymap.set("n", "`", function()
 	local mark = vim.fn.getcharstr()
-	if mark == "\27" then return "" end   -- Esc cancels
+	if mark == "\27" then return "" end -- Esc cancels
 	return "`" .. mark .. "zz"
 end, { expr = true, desc = "Jump to mark (char) and center" })
 
