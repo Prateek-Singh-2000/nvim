@@ -13,15 +13,17 @@ vim.keymap.set({ "n", "v" }, "<C-o>", "<C-o>zz", opts)
 vim.keymap.set({ "n", "v" }, "<C-i>", "<C-i>zz", opts)
 vim.keymap.set({ "n", "v" }, "<C-f>", "<C-u>zz", opts)
 
+vim.keymap.set('n', 'x', '"_x',
+	{ desc = 'Delete char without yank (blackhole)', noremap = true, silent = true })
 
 vim.keymap.set({ 'n', 'v' }, 'd', '"_d',
 	{ desc = 'Delete without yank (blackhole)', noremap = true, silent = true })
 
-vim.keymap.set('n', 'x', '"_x',
-	{ desc = 'Delete char without yank (blackhole)', noremap = true, silent = true })
-
 vim.keymap.set({ 'n', 'v' }, '<leader>d', 'd',
 	{ desc = 'Delete with yank (default register)', noremap = true, silent = true })
+
+vim.keymap.set({ 'n', 'v' }, 'c', '"_c',
+	{ desc = 'Change without yank (blackhole)' })
 
 
 vim.keymap.set("n", "n", "nzzzv")
