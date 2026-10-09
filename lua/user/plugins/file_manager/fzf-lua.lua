@@ -17,6 +17,8 @@ return {
 			},
 			files = {
 				formatter = "path.filename_first",
+				fd_opts = "--color=never --hidden --type f --type l --exclude .git --exclude node_modules",
+				rg_opts = "--color=never --files --hidden --follow -g '!.git' -g '!node_modules'",
 			},
 			grep = {
 				rg_opts =

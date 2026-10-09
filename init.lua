@@ -82,8 +82,8 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "ColorScheme", "VimEnte
 	end,
 })
 
-vim.api.nvim_create_autocmd("VimEnter", {
-	callback = function()
-		vim.cmd("Screenkey toggle")
-	end,
-})
+-- vim.api.nvim_create_autocmd("VimEnter", {
+-- 	callback = function()
+-- 		vim.cmd("Screenkey toggle")
+-- 	end,
+-- })
