@@ -81,17 +81,17 @@ require("lazy").setup({
 	{
 		"nvim-tree/nvim-web-devicons",
 	},
-	{
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		lazy = false,
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-		config = function()
-			require("user.plugins.nvim-tree-config")
-		end,
-	},
+	-- {
+	-- 	"nvim-tree/nvim-tree.lua",
+	-- 	version = "*",
+	-- 	lazy = false,
+	-- 	dependencies = {
+	-- 		"nvim-tree/nvim-web-devicons",
+	-- 	},
+	-- 	config = function()
+	-- 		require("user.plugins.nvim-tree-config")
+	-- 	end,
+	-- },
 	{
 		"nvimtools/none-ls.nvim",
 		dependencies = {
@@ -159,7 +159,7 @@ require("lazy").setup({
 	require("user.plugins.themes.better-cmd-line"),
 	require("user.plugins.themes.dashboard"),
 	require("user.plugins.editors.markdown"),
-	require("user.plugins.beautify.centerpad"),
+	-- require("user.plugins.beautify.centerpad"),
 	require("user.plugins.beautify.dressing"),
 	require("user.plugins.beautify.screenkey"),
 	require("user.plugins.nvim-biscuits.nvim-biscuits"),

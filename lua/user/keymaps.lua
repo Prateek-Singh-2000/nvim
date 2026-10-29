@@ -96,3 +96,73 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
+
+
+local function open_padding(width)
+	local content_width = width or 100
+	local pad = math.floor((vim.o.columns - content_width) / 2)
+
+	if pad < 1 then
+		vim.notify("Terminal is not wider than " .. content_width .. " columns", vim.log.levels.WARN)
+		return
+	end
+
+	local main_win = vim.api.nvim_get_current_win()
+
+	vim.cmd("only")
+	vim.cmd("leftabove vnew")
+
+	local pad_win = vim.api.nvim_get_current_win()
+	local pad_buf = vim.api.nvim_win_get_buf(pad_win)
+
+	vim.bo[pad_buf].buftype = "nofile"
+	vim.bo[pad_buf].bufhidden = "wipe"
+	vim.bo[pad_buf].buflisted = false
+	vim.bo[pad_buf].swapfile = false
+	vim.bo[pad_buf].modifiable = false
+
+	local wo = vim.wo[pad_win]
+	wo.number = false
+	wo.relativenumber = false
+	wo.signcolumn = "no"
+	wo.foldcolumn = "0"
+	wo.cursorline = false
+	wo.statusline = " "
+	wo.fillchars = "eob: "
+	wo.winfixwidth = true
+
+	vim.api.nvim_win_set_width(pad_win, pad)
+	vim.api.nvim_set_current_win(main_win)
+
+	-- Record the padding window so the next invocation can find and close it
+	vim.t.center_pad_win = pad_win
+end
+
+local function close_padding(pad_win)
+	-- Closing the last window in a tab raises E444, so only close if another exists
+	if #vim.api.nvim_tabpage_list_wins(0) > 1 then
+		vim.api.nvim_win_close(pad_win, true)
+	end
+	vim.t.center_pad_win = nil
+end
+
+vim.api.nvim_create_user_command("CenterBuffer", function(opts)
+	local pad_win = vim.t.center_pad_win
+
+	if pad_win and vim.api.nvim_win_is_valid(pad_win) then
+		close_padding(pad_win)
+	else
+		open_padding(tonumber(opts.args))
+	end
+end, { nargs = "?", desc = "Toggle left padding to center the current buffer" })
+
+vim.keymap.set("n", "<leader>cv", "<cmd>CenterBuffer 70<CR>", { desc = "Toggle centered buffer" })
+vim.keymap.set("n", "<leader>cc", "<cmd>CenterBuffer 100<CR>", { desc = "Toggle centered buffer" })
+vim.keymap.set("n", "<leader>ee", "<cmd>tab split<CR><cmd>CenterBuffer<CR>", {
+    desc = "Open current buffer in new tab",
+})
+
+vim.keymap.set("n", "<leader>er", "<cmd>tabclose<CR>", {
+    desc = "Close current tab",
+})
+
