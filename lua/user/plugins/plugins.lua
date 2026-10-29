@@ -130,6 +130,7 @@ require("lazy").setup({
 		"ThePrimeagen/vim-be-good",
 	},
 	require("user.plugins.formatters.conform"),
+	require("user.plugins.formatters.hydra"),
 	require("user.plugins.linters.lspconfig"),
 	require("user.plugins.linters.nvim-lint"),
 	require("user.plugins.file_manager.fzf-lua"),
@@ -147,7 +148,6 @@ require("lazy").setup({
 
 
 	require("user.plugins.ai_completions.neocodium"),
-	-- require("user.plugins.ai_completions.avante"),
 	require("user.plugins.tabline.lua-line"),
 	require("user.plugins.surrounds.tpope-vim-surround"),
 	require("user.plugins.file_manager.yazi"),
@@ -159,7 +159,6 @@ require("lazy").setup({
 	require("user.plugins.themes.better-cmd-line"),
 	require("user.plugins.themes.dashboard"),
 	require("user.plugins.editors.markdown"),
-	-- require("user.plugins.beautify.centerpad"),
 	require("user.plugins.beautify.dressing"),
 	require("user.plugins.beautify.screenkey"),
 	require("user.plugins.nvim-biscuits.nvim-biscuits"),

@@ -159,10 +159,9 @@ end, { nargs = "?", desc = "Toggle left padding to center the current buffer" })
 vim.keymap.set("n", "<leader>cv", "<cmd>CenterBuffer 70<CR>", { desc = "Toggle centered buffer" })
 vim.keymap.set("n", "<leader>cc", "<cmd>CenterBuffer 100<CR>", { desc = "Toggle centered buffer" })
 vim.keymap.set("n", "<leader>ee", "<cmd>tab split<CR><cmd>CenterBuffer<CR>", {
-    desc = "Open current buffer in new tab",
+	desc = "Open current buffer in new tab",
 })
 
 vim.keymap.set("n", "<leader>er", "<cmd>tabclose<CR>", {
-    desc = "Close current tab",
+	desc = "Close current tab",
 })
-
