@@ -16,11 +16,11 @@ return { {
 				lualine_x = {
 					-- Show tmux sessions or window list right inside lualine
 					-- { function() return require('tmux-status').tmux_windows() end },
-					{
-						require('tmux-status').tmux_session,
-						cond = require('tmux-status').show,
-						padding = { left = 3 },
-					}
+					-- {
+					-- 	require('tmux-status').tmux_session,
+					-- 	cond = require('tmux-status').show,
+					-- 	padding = { left = 3 },
+					-- }
 				},
 				lualine_y = { 'progress' },
 				lualine_z = { 'location' }
@@ -60,7 +60,12 @@ return { {
 				lualine_b = {},
 				lualine_c = {},
 				lualine_x = {},
-				lualine_y = {},
+				lualine_y = { {
+					require('tmux-status').tmux_session,
+					cond = require('tmux-status').show,
+					padding = { left = 3 },
+				}
+				},
 				lualine_z = { 'tabs' }
 			}
 		})
