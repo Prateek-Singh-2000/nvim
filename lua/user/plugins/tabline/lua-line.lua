@@ -15,7 +15,7 @@ return { {
 				lualine_c = { 'filename' },
 				lualine_x = {
 					-- Show tmux sessions or window list right inside lualine
-					{ function() return require('tmux-status').tmux_windows() end },
+					-- { function() return require('tmux-status').tmux_windows() end },
 					{
 						require('tmux-status').tmux_session,
 						cond = require('tmux-status').show,
