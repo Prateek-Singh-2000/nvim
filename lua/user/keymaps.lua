@@ -1,7 +1,7 @@
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set("n", "<leader>xl", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
 
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+-- vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
 vim.keymap.set("n", "==", "mzgg=G`z", { desc = "Format whole file without moving cursor" })
 
@@ -68,6 +68,8 @@ end
 vim.keymap.set('n', '<leader>t', toggle_terminal)
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
+vim.api.nvim_create_user_command("ToggleTerminal", toggle_terminal,
+	{ nargs = 0, desc = "Toggle left padding to center the current buffer" })
 
 -- Toggle current split to full screen (new tab) and back
 local function toggle_maximize()
@@ -158,10 +160,13 @@ end, { nargs = "?", desc = "Toggle left padding to center the current buffer" })
 
 vim.keymap.set("n", "<leader>cv", "<cmd>CenterBuffer 70<CR>", { desc = "Toggle centered buffer" })
 vim.keymap.set("n", "<leader>cc", "<cmd>CenterBuffer 100<CR>", { desc = "Toggle centered buffer" })
+
 vim.keymap.set("n", "<leader>ee", "<cmd>tab split<CR><cmd>CenterBuffer<CR>", {
 	desc = "Open current buffer in new tab",
 })
-
 vim.keymap.set("n", "<leader>er", "<cmd>tabclose<CR>", {
+	desc = "Close current tab",
+})
+vim.keymap.set("n", "<leader>et", "<cmd>tab split<CR><cmd>CenterBuffer<CR><cmd>ToggleTerminal<CR>", {
 	desc = "Close current tab",
 })

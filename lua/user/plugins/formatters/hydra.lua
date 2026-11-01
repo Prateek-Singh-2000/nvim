@@ -5,7 +5,7 @@ return {
 		local Hydra = require("hydra")
 		local cmd = require("hydra.keymap-util").cmd
 
-		local step = 5 -- change this to adjust every resize head at once
+		local step = 2 -- change this to adjust every resize head at once
 
 		local function resize(key)
 			return { key, cmd(step .. "wincmd " .. key) }

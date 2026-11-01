@@ -3,6 +3,8 @@ require("user.options")
 -- Get Options lua file
 require("user.keymaps")
 
+require("user.bigfile")
+
 -- Get Plugins lua file
 require("user.plugins.plugins")
 
