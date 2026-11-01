@@ -8,6 +8,14 @@ return {
 		-- REQUIRED - setup with global settings
 		harpoon:setup()
 
+		local keys = { "Q", "W", "E", "R", "T" }
+
+		for i, key in ipairs(keys) do
+			vim.keymap.set("n", "<M-C-" .. key .. ">", function()
+				harpoon:list():select(i)
+			end, { desc = "Harpoon file " .. i })
+		end
+
 		-- Basic keymaps
 		vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end)
 		vim.keymap.set("n", "<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
@@ -27,6 +35,5 @@ return {
 
 		-- Clear all harpooned files
 		vim.keymap.set("n", "<leader>hz", function() harpoon:list():clear() end)
-
 	end,
 }

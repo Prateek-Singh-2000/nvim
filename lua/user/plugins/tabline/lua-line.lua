@@ -8,6 +8,8 @@ return { {
 		require('lualine').setup({
 			options = {
 				theme = 'auto',
+				component_separators = '',
+				section_separators = { left = '', right = '' },
 			},
 			sections = {
 				lualine_a = { 'mode' },
@@ -60,13 +62,13 @@ return { {
 				lualine_b = {},
 				lualine_c = {},
 				lualine_x = {},
-				lualine_y = { {
-					require('tmux-status').tmux_session,
-					cond = require('tmux-status').show,
-					padding = { left = 3 },
-				}
+				lualine_y = { 'tabs' },
+				lualine_z = {
+					{
+						require('tmux-status').tmux_session,
+						cond = require('tmux-status').show,
+					},
 				},
-				lualine_z = { 'tabs' }
 			}
 		})
 	end
