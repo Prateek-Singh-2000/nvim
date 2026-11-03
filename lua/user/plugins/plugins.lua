@@ -126,9 +126,6 @@ require("lazy").setup({
 	{
 		"kshenoy/vim-signature",
 	},
-	{
-		"ThePrimeagen/vim-be-good",
-	},
 	require("user.plugins.formatters.conform"),
 	require("user.plugins.formatters.hydra"),
 	require("user.plugins.linters.lspconfig"),
@@ -155,6 +152,7 @@ require("lazy").setup({
 	require("user.plugins.finder.flash"),
 	require("user.plugins.git.git-signs"),
 	require("user.plugins.vim-tmux-navigator.vim-tmux-navigator"),
+	-- require("user.plugins.vim-tmux-navigator.smart-splits"),
 	require("user.plugins.themes.hexokinase"),
 	require("user.plugins.themes.better-cmd-line"),
 	require("user.plugins.themes.dashboard"),
