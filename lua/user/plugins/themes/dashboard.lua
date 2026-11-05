@@ -30,14 +30,15 @@ local dashboard_config = {
 		header = matrix_art, -- Change this to any art above
 		center = {
 			-- { action = 'Telescope find_files', desc = ' Find file',    icon = ' ', key = 'f' },
-			{ action = 'FzfLua files',     desc = ' Find file',    icon = ' ', key = 'f' },
-			{ action = 'ene | startinsert', desc = ' New file', icon = ' ', key = 'n' },
+			{ action = 'FzfLua files',                                     desc = ' Find file',            icon = ' ', key = 'f' },
+			{ action = 'ene | startinsert',                                desc = ' New file',             icon = ' ', key = 'n' },
 			-- { action = 'Telescope oldfiles',   desc = ' Recent files', icon = ' ', key = 'r' },
-			{ action = 'FzfLua oldfiles',  desc = ' Recent files', icon = ' ', key = 'r' },
+			{ action = 'FzfLua oldfiles',                                  desc = ' Recent files',         icon = ' ', key = 'r' },
 			-- { action = 'Telescope live_grep',  desc = ' Find text',    icon = ' ', key = 'g' },
-			{ action = 'FzfLua live_grep', desc = ' Find text',    icon = ' ', key = 'g' },
-			{ action = 'e $MYVIMRC',       desc = ' Config',       icon = ' ', key = 'c' },
-			{ action = 'qa',               desc = ' Quit',         icon = ' ', key = 'q' },
+			{ action = 'FzfLua live_grep',                                 desc = ' Find text',            icon = ' ', key = 'g' },
+			{ action = 'lua require("persistence").load()',                desc = ' Restore Session',      icon = ' ', key = 's' },
+			{ action = 'e $MYVIMRC',                                       desc = ' Config',               icon = ' ', key = 'c' },
+			{ action = 'qa',                                               desc = ' Quit',                 icon = ' ', key = 'q' },
 		},
 		footer = function()
 			return { "⚡ Neovim loaded " }
