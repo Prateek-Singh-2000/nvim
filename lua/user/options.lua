@@ -13,6 +13,11 @@ vim.opt.softtabstop = 2
 vim.opt.mouse = "a"
 vim.opt.swapfile = false
 
+-- fold settings
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldcolumn = "0"
+
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.termguicolors = true

@@ -41,8 +41,12 @@ return {
 
 		-- Additional important keymaps
 		vim.keymap.set('n', '<leader>i', vim.diagnostic.open_float, { desc = 'Show line diagnostics' })
-		vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
-		vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
+		vim.keymap.set('n', ']d', function()
+			vim.diagnostic.jump({ count = 1 })
+		end, { desc = 'Jump to next diagnostic' })
+		vim.keymap.set('n', '[d', function()
+			vim.diagnostic.jump({ count = -1 })
+		end, { desc = 'Jump to previous diagnostic' })
 		vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code actions' })
 		vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename symbol' })
 		vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, { desc = 'Signature help' })
