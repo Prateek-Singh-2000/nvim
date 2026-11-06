@@ -1,10 +1,9 @@
-return {
+return  {
 	"rafi/awesome-vim-colorschemes",
 	lazy = false,
 	priority = 1000,
 	opts = {},
 	config = function()
-		-- vim.cmd.colorscheme("twilight256")
 		-- vim.cmd.colorscheme("lightning")
 		-- vim.cmd.colorscheme("OceanicNext")
 		-- vim.cmd.colorscheme("sierra")

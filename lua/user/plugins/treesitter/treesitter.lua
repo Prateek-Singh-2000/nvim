@@ -1,51 +1,31 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	branch = "main",
+	lazy = false,
+	build = ":TSUpdate",
 	config = function()
-		require("nvim-treesitter.configs").setup({
-			ensure_installed = {
-				"c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline",
-				"python", "go", "javascript", "typescript", "json", "yaml", "html",
-				"css", "scss", "rust", "bash", "dockerfile", "toml", "regex", "comment",
-			},
-
-			sync_install = false,
-
-			auto_install = true,
-
-			highlight = {
-				enable = true,
-			},
-
-			indent = {
-				enable = true,
-			},
-
-			incremental_selection = {
-				enable = false,
-				keymaps = {
-					init_selection = "<Leader>sa",
-					node_incremental = "<Leader>si",
-					scope_incremental = "<Leader>sc",
-					node_decremental = "<Leader>sd",
-				},
-			},
+		require("nvim-treesitter").install({
+			"c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline",
+			"python", "go", "javascript", "typescript", "json", "yaml", "html",
+			"css", "scss", "rust", "bash", "dockerfile", "toml", "regex", "comment",
 		})
 
-		-- Folding: native Neovim treesitter folding (requires Neovim 0.10+)
 		vim.o.foldenable = true
-		vim.o.foldlevel = 99    -- current window: nothing starts folded
-		vim.o.foldlevelstart = 99 -- buffers entered later: nothing starts folded
-		vim.o.foldtext = ""     -- render the folded line with syntax highlighting
+		vim.o.foldlevel = 99
+		vim.o.foldlevelstart = 99
+		vim.o.foldtext = ""
 
 		vim.api.nvim_create_autocmd("FileType", {
-			group = vim.api.nvim_create_augroup("ts_folding", { clear = true }),
+			group = vim.api.nvim_create_augroup("ts_treesitter", { clear = true }),
 			callback = function(args)
-				-- Only enable expr folding if a parser exists for this buffer's filetype
-				local ok = pcall(vim.treesitter.get_parser, args.buf)
-				if ok then
-					vim.wo[0][0].foldmethod = "expr"
-					vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+				local lang = vim.treesitter.language.get_lang(args.match)
+				-- start() errors if no parser is installed for this language
+				if not lang or not pcall(vim.treesitter.start, args.buf, lang) then
+					return
 				end
+				vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+				vim.wo[0][0].foldmethod = "expr"
+				vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
 			end,
 		})
 	end,

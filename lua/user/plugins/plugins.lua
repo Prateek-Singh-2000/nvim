@@ -132,9 +132,12 @@ require("lazy").setup({
 	require("user.plugins.themes.tokyo-night"),
 	require("user.plugins.themes.nightfox"),
 	require("user.plugins.themes.rose-pine"),
+	require("user.plugins.themes.awesome-colorscheme"),
 
 
-	require("user.plugins.ai_completions.neocodium"),
+	-- require("user.plugins.ai_completions.neocodium"),
+	-- require("user.plugins.ai_completions.windsurf"),
+	require("user.plugins.ai_completions.tpope_copilot"),
 	require("user.plugins.tabline.lua-line"),
 	require("user.plugins.surrounds.tpope-vim-surround"),
 	require("user.plugins.file_manager.yazi"),
