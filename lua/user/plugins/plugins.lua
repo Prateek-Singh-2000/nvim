@@ -19,24 +19,24 @@ require("lazy").setup({
 			require("nvim-autopairs").setup({})
 		end
 	},
-	{
-		'numToStr/Comment.nvim',
-		opts = {
-			padding = true,
-			sticky = true,
-			ignore = nil,
-			toggler = {
-				line = 'gcc',
-				block = 'gbc',
-			},
-			mappings = {
-				basic = true,
-				extra = true,
-			},
-			pre_hook = nil,
-			post_hook = nil,
-		}
-	},
+	-- {
+	-- 	'numToStr/Comment.nvim',
+	-- 	opts = {
+	-- 		padding = true,
+	-- 		sticky = true,
+	-- 		ignore = nil,
+	-- 		toggler = {
+	-- 			line = 'gcc',
+	-- 			block = 'gbc',
+	-- 		},
+	-- 		mappings = {
+	-- 			basic = true,
+	-- 			extra = true,
+	-- 		},
+	-- 		pre_hook = nil,
+	-- 		post_hook = nil,
+	-- 	}
+	-- },
 	{
 		"neovim/nvim-lspconfig"
 	},
@@ -151,5 +151,6 @@ require("lazy").setup({
 	require("user.plugins.editors.markdown"),
 	require("user.plugins.beautify.dressing"),
 	require("user.plugins.beautify.screenkey"),
+	-- require("user.plugins.beautify.moody"),
 	require("user.plugins.nvim-biscuits.nvim-biscuits"),
 })

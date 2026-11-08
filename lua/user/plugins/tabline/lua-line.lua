@@ -5,6 +5,15 @@ return { {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
+		local function macro_recording()
+			local reg = vim.fn.reg_recording()
+
+			if reg == "" then
+				return ""
+			end
+
+			return "󰑋 RECORDING @" .. reg
+		end
 		require('lualine').setup({
 			options = {
 				theme = 'auto',
@@ -12,7 +21,15 @@ return { {
 				-- section_separators = { left = '', right = '' },
 			},
 			sections = {
-				lualine_a = { 'mode' },
+				lualine_a = {
+					-- {
+					-- 	macro_recording,
+					-- 	color = {
+					-- 		fg = "#ff5555",
+					-- 		gui = "bold",
+					-- 	},
+					-- },
+					'mode' },
 				lualine_b = { 'diff', 'diagnostics' },
 				lualine_c = { 'filename' },
 				lualine_x = {

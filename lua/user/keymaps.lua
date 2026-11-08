@@ -6,6 +6,7 @@ vim.keymap.set("n", "<leader>xl", "<cmd>nohlsearch<CR>", { desc = "Clear search 
 -- Normal, Visual, and Operator-pending modes
 vim.keymap.set({ 'n', 'x', 'o' }, 'H', '^', { desc = 'Go to beginning of line' })
 vim.keymap.set({ 'n', 'x', 'o' }, 'L', '$', { desc = 'Go to end of line' })
+vim.keymap.set("n", "J", "}")
 
 vim.keymap.set("n", "==", "mzgg=G`z", { desc = "Format whole file without moving cursor" })
 
