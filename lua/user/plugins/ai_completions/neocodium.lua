@@ -15,7 +15,6 @@ return {
 				api_url = "https://server.self-serve.windsurf.com",
 			},
 		})
-		-- 49753
 
 		vim.keymap.set("n", "<leader>cd", "<cmd>NeoCodeium disable<CR>", { desc = "Disable Codeium" })
 		vim.keymap.set("n", "<leader>ce", "<cmd>NeoCodeium enable<CR>", { desc = "Enable Codeium" })

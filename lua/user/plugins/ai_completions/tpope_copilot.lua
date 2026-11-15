@@ -20,11 +20,21 @@ return {
 	end,
 	config = function()
 		-- Enable / disable Copilot globally.
-		vim.keymap.set("n", "<leader>cd", "<cmd>Copilot disable<CR>", {
+		vim.keymap.set("n", "<leader>cd", function()
+			vim.cmd("Copilot disable")
+			vim.notify("Copilot disabled", vim.log.levels.INFO, {
+				title = "GitHub Copilot",
+			})
+		end, {
 			desc = "Disable Copilot",
 		})
 
-		vim.keymap.set("n", "<leader>ce", "<cmd>Copilot enable<CR>", {
+		vim.keymap.set("n", "<leader>ce", function()
+			vim.cmd("Copilot enable")
+			vim.notify("Copilot enabled", vim.log.levels.INFO, {
+				title = "GitHub Copilot",
+			})
+		end, {
 			desc = "Enable Copilot",
 		})
 
