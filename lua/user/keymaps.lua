@@ -1,14 +1,9 @@
--- Clear highlights on search when pressing <Esc> in normal mode
-vim.keymap.set("n", "<leader>xl", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
-
 -- vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 --
 -- Normal, Visual, and Operator-pending modes
 vim.keymap.set({ 'n', 'x', 'o' }, 'H', '^', { desc = 'Go to beginning of line' })
 vim.keymap.set({ 'n', 'x', 'o' }, 'L', '$', { desc = 'Go to end of line' })
 vim.keymap.set("n", "J", "}")
-
-vim.keymap.set("n", "==", "mzgg=G`z", { desc = "Format whole file without moving cursor" })
 
 local opts = { noremap = true, silent = true }
 
@@ -172,6 +167,6 @@ vim.keymap.set("n", "<leader>ee", "<cmd>tab split<CR><cmd>CenterBuffer<CR>", {
 vim.keymap.set("n", "<leader>er", "<cmd>tabclose<CR>", {
 	desc = "Close current tab",
 })
-vim.keymap.set("n", "<leader>et", "<cmd>tab split<CR><cmd>CenterBuffer<CR><cmd>ToggleTerminal<CR>", {
+vim.keymap.set("n", "<leader>et", "<cmd>tab split<CR><cmd>ToggleTerminal<CR>", {
 	desc = "Close current tab",
 })

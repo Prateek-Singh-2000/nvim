@@ -12,6 +12,22 @@ return {
 			},
 		})
 
+		vim.treesitter.query.add_directive("inner-brackets!", function(match, _, _, pred, metadata)
+			local id = pred[2]
+			local node = match[id]
+			if type(node) == "table" then
+				node = node[1]
+			end
+			if not node then
+				return
+			end
+			local sr, sc, er, ec = node:range()
+			local range = { sr, sc + 1, er, ec - 1 }
+			metadata[id] = metadata[id] or {}
+			metadata[id].range = range
+			metadata.range = range
+		end, { force = true, all = true })
+
 		local select = require("nvim-treesitter-textobjects.select").select_textobject
 		local move = require("nvim-treesitter-textobjects.move")
 		local swap = require("nvim-treesitter-textobjects.swap")
@@ -32,6 +48,8 @@ return {
 			il = "@loop.inner",
 			aq = "@string.outer",
 			iq = "@string.inner",
+			ar = "@bracket.outer",
+			ir = "@bracket.inner",
 		}
 		for lhs, capture in pairs(selects) do
 			vim.keymap.set({ "x", "o" }, lhs, function()

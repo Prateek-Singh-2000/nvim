@@ -38,7 +38,7 @@ return {
 		end
 
 		require('minuet').setup {
-			provider = 'openai_compatible',
+			provider = 'codestral',
 			n_completions = 1,
 			request_timeout = 5,
 			throttle = 2500,
@@ -49,15 +49,12 @@ return {
 				keymap = {},
 			},
 			provider_options = {
-				openai_compatible = {
-					api_key = 'GROQ_API_KEY',
-					end_point = 'https://api.groq.com/openai/v1/chat/completions',
-					model = 'qwen/qwen3.8-27b',
-					name = 'Groq',
+				codestral = {
+					-- name of the environment variable, not the key itself
+					api_key = 'CODESTRAL_API_KEY',
 					optional = {
-						max_tokens = 56,
-						top_p = 0.9,
-						reasoning_effort = 'none',
+						max_tokens = 256,
+						stop = { '\n\n' },
 					},
 				},
 			},
